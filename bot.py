@@ -1,40 +1,53 @@
 import os
+import sys
 import discord
 import GLaDOS
-from moderacion import borrar_mensajes
-from ppyt import jugar_partida
+import asyncio
+from comandos.moderacion import borrar_mensajes
+from comandos.ppyt import jugar_partida
 from dotenv import load_dotenv
 from discord.ext import commands
-from dolar import obtener_cotizacion_dolar
-from casino_saldos import obtener_saldo, actualizar_saldo
-from reto import determinar_ganador,EleccionView as RetoEleccionView 
-from horoscopo import obtener_horoscopo
-from clima import obtener_clima
-from casino import manejar_comando_ruleta
-from encuesta import crear_encuesta
-from crypto import obtener_precio_coincap    
+from comandos.dolar import obtener_cotizacion_dolar
+from comandos.casino_saldos import casino_manager 
+from comandos.reto import determinar_ganador,EleccionView as RetoEleccionView 
+from comandos.horoscopo import obtener_horoscopo
+from comandos.clima import obtener_clima
+from comandos.casino import Ruleta
+from comandos.encuesta import Encuesta
+from comandos.crypto import obtener_precio_coincap    
+from GLaDOS import GLaDOS 
+from comandos.estadisticas_comando import Estadisticas
+from comandos.recargar import Recargar
+
 
 #no olvidar botpy\Scripts\activate
 
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# Cargar token desde archivo .env
+# Configuración inicial
 load_dotenv(dotenv_path='C:\\Users\\ignac\\Desktop\\cosas PY\\discord\\Token.env')
-TOKEN = os.getenv("DISCORD_TOKEN")
-
-
-# Configurar intents y el bot
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True  
-
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-
-# Evento de inicio
-@bot.event
-async def on_ready():
-    print(f"Bot conectado como {bot.user}")
-
+# Carga de cogs
+async def load_cogs():
+    cogs_to_load = [
+        ('comandos.recargar', Recargar),
+        ('comandos.estadisticas', Estadisticas),
+        ('comandos.casino', Ruleta),  
+        ('GLaDOS', GLaDOS),
+        ('comandos.encuesta', Encuesta),
+    ]
+    
+    for cog_name, cog_class in cogs_to_load:
+        try:
+            await bot.add_cog(cog_class(bot))
+            print(f'✅ {cog_name} cargado correctamente')
+        except Exception as e:
+            print(f'❌ Error al cargar {cog_name}: {e}')
+        
 # Comando para borrar mensajes
 @bot.command()
 async def borrar(ctx, cantidad: int = 5):
@@ -133,28 +146,14 @@ async def horoscopo(ctx, signo: str = None):
 async def clima(ctx, *, ciudad: str): 
     await obtener_clima(ctx, ciudad)
 
-#ruleta
-@bot.command()
-async def ruleta(ctx, tipo_apuesta: str = None, valor_apuesta: int = None):
-    await manejar_comando_ruleta(ctx, tipo_apuesta, valor_apuesta)
 
-#recargar
-@bot.command()
-async def recargar(ctx):
-    usuario_id = str(ctx.author.id)
-    saldo_actual = obtener_saldo(usuario_id)
 
-    if saldo_actual > 0:
-        await ctx.send(f"💰 Aún tienes saldo suficiente ({saldo_actual}). Solo puedes recargar cuando tu saldo sea 0.")
-    else:
-        actualizar_saldo(usuario_id, 100)
-        await ctx.send("🔄 Tu saldo ha sido recargado con 100 monedas. ¡Buena suerte!")
 
 #saldo
 @bot.command()
 async def saldo(ctx):
     usuario_id = str(ctx.author.id)
-    saldo_actual = obtener_saldo(usuario_id)
+    saldo_actual = casino_manager.obtener_saldo(usuario_id)
     await ctx.send(f"💰 {ctx.author.mention}, tu saldo actual es de **{saldo_actual} monedas**.")
 
 #payouts
@@ -169,11 +168,6 @@ async def pagos(ctx):
     )
     await ctx.send(mensaje)
 
-#encuesta
-@bot.command()
-async def encuesta(ctx, *, raw: str = None):
-       await crear_encuesta(ctx, raw)
-
 
 
 #precio de criptomonedas
@@ -186,26 +180,6 @@ async def crypto(ctx, moneda: str = None):
         return await ctx.send(f"❌ No encontré `{moneda}` en CoinCap.")
     id, sym, price = res
     await ctx.send(f"💱 **{sym.upper()}** (id:`{id}`) → **${price:,.2f} USD**")
-
-
-#GLaDOS
-@bot.event
-async def on_member_join(member):
-    await GLaDOS.on_member_join(member)
-
-@bot.event
-async def on_member_remove(member):
-    await GLaDOS.on_member_remove(member)
-
-
-@bot.command()
-async def cake(ctx):
-    await GLaDOS.comando_cake(ctx)
-
-
-@bot.command(name="glados_info")
-async def glados_info_command(ctx):
-    await GLaDOS.glados_info(ctx)
 
 
 
@@ -226,30 +200,25 @@ async def on_command_error(ctx, error):
 
 
 
-
-
-
-
 #---------------------ESTO SIEMPRE VA AL FINAL-----------------------------------------------------
 
-#mensaje si se menciona a GLaDOS en el chat
-@bot.event
-async def on_message(message):
-    if message.author.bot:
-        return
 
-    # Evita activar si es un comando
-    ctx = await bot.get_context(message)
-    if ctx.valid:
-        await bot.process_commands(message)
-        return
-
-    if "glados" in message.content.lower() or bot.user.mentioned_in(message):
-
-        await GLaDOS.respuesta_mencion(message)
-
-    await bot.process_commands(message)
 
 
 # Iniciar el bot con el token correcto
-bot.run(TOKEN)
+@bot.event
+async def on_ready():
+    print(f'Bot conectado como {bot.user}')
+    print('------')
+
+async def main():
+    await load_cogs()
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\nBot detenido manualmente")
+    except Exception as e:
+        print(f"Error inesperado: {e}")

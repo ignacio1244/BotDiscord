@@ -1,33 +1,40 @@
 import json
 import os
+from pathlib import Path
 
-# Archivo donde se guardan los saldos
-ARCHIVO_SALDOS = "saldos_casino.json"
+class CasinoManager:
+    def __init__(self):
+        self.data_path = Path("utils/saldos_casino.json")
+        self._ensure_data_file()
 
-# Inicializar saldos si no existe
-if not os.path.exists(ARCHIVO_SALDOS) or os.stat(ARCHIVO_SALDOS).st_size == 0:
-    with open(ARCHIVO_SALDOS, "w") as f:
-        json.dump({}, f)
+    def _ensure_data_file(self):
+        """Crea el archivo si no existe"""
+        self.data_path.parent.mkdir(exist_ok=True)
+        if not self.data_path.exists():
+            with open(self.data_path, 'w') as f:
+                json.dump({}, f)
 
-# Cargar saldos
-with open(ARCHIVO_SALDOS, "r") as f:
-    try:
-        saldos = json.load(f)
-    except json.JSONDecodeError:
-        saldos = {}
+    def obtener_saldo(self, usuario_id):
+        try:
+            with open(self.data_path, 'r') as f:
+                return json.load(f).get(str(usuario_id), 100)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return 100
 
-def guardar_saldos():
-    with open(ARCHIVO_SALDOS, "w") as f:
-        json.dump(saldos, f)
+    def actualizar_saldo(self, usuario_id, monto):
+        try:
+            with open(self.data_path, 'r') as f:
+                data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            data = {}
+        
+        data[str(usuario_id)] = monto
+        
+        with open(self.data_path, 'w') as f:
+            json.dump(data, f, indent=4)
 
-def obtener_saldo(usuario_id):
-    return saldos.get(str(usuario_id), 100)
+# Instancia global que debe ser importada
+casino_manager = CasinoManager()
 
-def actualizar_saldo(usuario_id, nuevo_saldo):
-    saldos[str(usuario_id)] = nuevo_saldo
-    guardar_saldos()
-
-# Colores estándar de ruleta europea
-rojo = {1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36}
-negro = {2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35}
-verde = {0}
+# Exportaciones explícitas
+__all__ = ['casino_manager']

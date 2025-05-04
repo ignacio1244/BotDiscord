@@ -13,3 +13,4 @@ async def borrar_mensajes(ctx, cantidad: int = 5):
     await ctx.channel.purge(limit=cantidad + 1)  # +1 para borrar el comando también
     confirmacion = await ctx.send(f"🧹 Se borraron {cantidad} mensajes.")
     await confirmacion.delete(delay=5)  # Borra el mensaje de confirmación tras 5 segundos
+

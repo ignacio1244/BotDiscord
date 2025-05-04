@@ -12,7 +12,7 @@ def obtener_horoscopo(signo: str = None):
         f"¿De verdad confías en los horóscopos? Vamos, {signo}, ni el sol sabe qué te depara. ¡Que tengas un día promedio!",
         f"¡Ajá! Claro, porque el horóscopo predice el futuro... {signo}, tendrás un día normal, como todos los demás, ¡y ya está!",
         f"{signo}, si piensas que este horóscopo cambiará tu vida, te vas a decepcionar. ¡Vas a tener un día como cualquier otro!",
-        f"¡Claro, {signo}, el horóscopo sabe todo! Prepárate para un día donde absolutamente nada extraordinario sucederá... pero no te preocupes, todo estará bien.",
+        f"¡Claro, {signo}, el horóscopo sabe todo! Prepárate para un día donde absolutamente nada extraordinario sucederá.",
         f"Bueno, {signo}, según los astros, hoy será un día tan genial como mirar el reloj esperando que pase la hora. ¡Qué emoción!",
         f"Los astros dicen que hoy te enfrentarás a grandes desafíos. Como elegir entre pizza o hamburguesa para la cena. ¡Gran elección, {signo}!",
         f"¡Hoy es tu día, {signo}! De hecho, lo es para todos, porque el horóscopo no tiene ni idea de qué está pasando. ¡A seguir con la rutina!",
