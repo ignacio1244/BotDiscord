@@ -16,6 +16,7 @@ from crypto import obtener_precio_coincap
 
 #no olvidar botpy\Scripts\activate
 
+
 # Cargar token desde archivo .env
 load_dotenv(dotenv_path='C:\\Users\\ignac\\Desktop\\cosas PY\\discord\\Token.env')
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -27,7 +28,6 @@ intents.message_content = True
 intents.members = True  
 
 bot = commands.Bot(command_prefix="!", intents=intents)
-
 
 
 # Evento de inicio

@@ -48,7 +48,6 @@ async def glados_info(ctx):
 
 
 
-
 #----------------DICCIONARIOS--------------------------
 
 frases_presentacion = [
