@@ -7,7 +7,6 @@
 ## 🚀 Características
 
 - Bienvenida y despedida con frases sarcásticas personalizadas.
-- Respuestas automáticas al mencionar a GLaDOS.
 - Comandos como `!glados_info`, `!cake`, `!ruleta`, `!ppyt`, `!reto`, `!dolar`, `!horoscopo`, entre otros.
 - Gestión de saldo de usuario.
 - Estilo modular, fácil de mantener y ampliar.
@@ -15,40 +14,43 @@
 ---
 
 ## 🛠️ Instalación
-
+```
 1. Cloná el repositorio:
 
 git clone https://github.com/tu-usuario/tu-repo.git
 cd tu-repo
 
-## Creá y activá un entorno virtual:
-python -m venv venv
-venv\Scripts\activate      # En Windows
-source venv/bin/activate  # En Linux/Mac
+Creá y activá un entorno virtual:
+python -m venv venv 
+venv\Scripts\activate      # En Windows 
+source venv/bin/activate   # En Linux/Mac
 
-## Instalá las dependencias:
+Instalá las dependencias:
 
 pip install -r requirements.txt
 
-## Configurá tus variables de entorno
+Configurá tus variables de entorno
 
-Creá un archivo .env con tu token:
-DISCORD_TOKEN=tu_token_aqui
+Creá un archivo .env con tu token:  
+DISCORD_TOKEN=tu_token_aqui  
+```
+<br>
 
+## 💡 Estructura del proyecto 
 
+```
+📁 tu-repo/ 
+│ <br>
+├── bot.py               # Archivo principal 
+├── GLaDOS.py            # Mensajes automáticos y personalidad 
+├── comandos/ <br>
+│   ├── casino.py 
+│   ├── juego.py 
+│   ├── ppyt.py 
+│   └── reto.py 
+├── utils/ 
+│   └── casino_saldos.py 
+├── requirements.txt 
+└── .env 
 
-
-💡 Estructura del proyecto
-📁 tu-repo/
-│
-├── bot.py               # Archivo principal
-├── GLaDOS.py            # Mensajes automáticos y personalidad
-├── comandos/
-│   ├── casino.py
-│   ├── juego.py
-│   ├── ppyt.py
-│   └── reto.py
-├── utils/
-│   └── casino_saldos.py
-├── requirements.txt
-└── .env
+```
