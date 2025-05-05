@@ -1,0 +1,229 @@
+2025-05-05 03:22:52,685 | INFO | logging in using static token
+2025-05-05 03:22:53,782 | INFO | Shard ID None has connected to Gateway (Session ID: d2d7608f18f597907bb026fe95420385).
+2025-05-05 03:49:37,173 | ERROR | Excepción no capturada
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 216, in main
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 778, in start
+    await self.connect(reconnect=reconnect)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 659, in connect
+    await self.ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 619, in poll_event
+    msg = await self.socket.receive(timeout=self._max_heartbeat_timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_ws.py", line 334, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp\\_websocket\\reader_c.py", line 118, in read
+  File "aiohttp\\_websocket\\reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 236, in <module>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2025-05-05 03:49:44,121 | INFO | logging in using static token
+2025-05-05 03:49:45,204 | INFO | Shard ID None has connected to Gateway (Session ID: 46dc35e65af9fce32cee2be7022690c7).
+2025-05-05 03:50:01,317 | ERROR | Excepción no capturada
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 134, in main
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 778, in start
+    await self.connect(reconnect=reconnect)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 659, in connect
+    await self.ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 619, in poll_event
+    msg = await self.socket.receive(timeout=self._max_heartbeat_timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_ws.py", line 334, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp\\_websocket\\reader_c.py", line 118, in read
+  File "aiohttp\\_websocket\\reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 232, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2025-05-05 03:50:48,837 | INFO | logging in using static token
+2025-05-05 03:50:49,971 | INFO | Shard ID None has connected to Gateway (Session ID: 8c7a80ed99902ac2a1654bc4c73ab2fe).
+2025-05-05 03:51:04,569 | ERROR | Excepción no capturada
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 134, in main
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 778, in start
+    await self.connect(reconnect=reconnect)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 659, in connect
+    await self.ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 619, in poll_event
+    msg = await self.socket.receive(timeout=self._max_heartbeat_timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_ws.py", line 334, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp\\_websocket\\reader_c.py", line 118, in read
+  File "aiohttp\\_websocket\\reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 232, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2025-05-05 03:51:33,814 | INFO | logging in using static token
+2025-05-05 03:51:34,960 | INFO | Shard ID None has connected to Gateway (Session ID: 9d64ad76032057bfe1eddae90ca25237).
+2025-05-05 03:51:47,514 | ERROR | Excepción no capturada
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 134, in main
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 778, in start
+    await self.connect(reconnect=reconnect)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 659, in connect
+    await self.ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 619, in poll_event
+    msg = await self.socket.receive(timeout=self._max_heartbeat_timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_ws.py", line 334, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp\\_websocket\\reader_c.py", line 118, in read
+  File "aiohttp\\_websocket\\reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 232, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2025-05-05 03:57:08,125 | INFO | logging in using static token
+2025-05-05 03:57:09,218 | INFO | Shard ID None has connected to Gateway (Session ID: 362e9f5c1a44e0395d459528c8650dbf).
+2025-05-05 03:57:17,005 | ERROR | Excepción no capturada
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 213, in main
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 778, in start
+    await self.connect(reconnect=reconnect)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 659, in connect
+    await self.ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 619, in poll_event
+    msg = await self.socket.receive(timeout=self._max_heartbeat_timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_ws.py", line 334, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp\\_websocket\\reader_c.py", line 118, in read
+  File "aiohttp\\_websocket\\reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 233, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2025-05-05 03:59:58,935 | INFO | logging in using static token
+2025-05-05 03:59:59,309 | ERROR | Excepción no capturada
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 135, in main
+    await bot.start(os.getenv("DISCORD_TOKEN"))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 777, in start
+    await self.login(token)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 614, in login
+    self._application = await self.application_info()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 2496, in application_info
+    data = await self.http.application_info()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\http.py", line 625, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client.py", line 730, in _request
+    await resp.start(conn)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_reqrep.py", line 1059, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\streams.py", line 672, in read
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 233, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2025-05-05 04:01:37,270 | INFO | logging in using static token
+2025-05-05 04:01:38,419 | INFO | Shard ID None has connected to Gateway (Session ID: 94f9cd7de385865232cf6733da5b9011).
