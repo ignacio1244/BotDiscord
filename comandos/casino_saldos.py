@@ -33,8 +33,8 @@ class CasinoManager:
         with open(self.data_path, 'w') as f:
             json.dump(data, f, indent=4)
 
-# Instancia global que debe ser importada
+
 casino_manager = CasinoManager()
 
-# Exportaciones explícitas
+
 __all__ = ['casino_manager']

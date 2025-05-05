@@ -49,7 +49,7 @@ class Recargar(commands.Cog):
             )
             await ctx.send(embed=embed)
         else:
-            # Registrar otros errores
+            
             print(f"Error en comando recargar: {error}")
             raise error
 

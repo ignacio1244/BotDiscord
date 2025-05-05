@@ -5,7 +5,7 @@ def obtener_horoscopo(signo: str = None):
     if signo is None:
         return "¿Qué haces usando este comando? El horóscopo no sirve para nada. ¡No pierdas tu tiempo!"
 
-    # Mensajes sarcásticos y divertidos
+    
     respuestas = [
         f"¡Vaya! Estás usando el horóscopo... Claro, porque la astrología tiene respuestas para todo. Aquí va: {signo} está destinado a tener un día increíble... si te tomas una siesta.",
         f"¿Estás en serio? ¡El horóscopo no sabe nada! Pero bueno, aquí tienes: {signo}, prepárate para un día lleno de... ¿nada especial?",
@@ -20,7 +20,6 @@ def obtener_horoscopo(signo: str = None):
         f"El universo te está mirando, {signo}, y está pensando... '¿Realmente confías en un horóscopo?' Bueno, ¡es lo que hay!"
     ]
     
-    # Elegir una respuesta al azar
-
+   
     return random.choice(respuestas)
 
