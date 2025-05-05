@@ -3,13 +3,16 @@ import sys
 import discord
 import GLaDOS
 import asyncio
+import logging
+import datetime
+import signal
 from comandos.moderacion import borrar_mensajes
 from comandos.ppyt import jugar_partida
 from dotenv import load_dotenv
 from discord.ext import commands
 from comandos.dolar import obtener_cotizacion_dolar
 from comandos.casino_saldos import casino_manager 
-from comandos.reto import determinar_ganador,EleccionView as RetoEleccionView 
+from comandos.reto import Reto
 from comandos.horoscopo import obtener_horoscopo
 from comandos.clima import obtener_clima
 from comandos.casino import Ruleta
@@ -18,36 +21,132 @@ from comandos.crypto import obtener_precio_coincap
 from GLaDOS import GLaDOS 
 from comandos.estadisticas_comando import Estadisticas
 from comandos.recargar import Recargar
-
+from comandos.ayuda import Ayuda
 
 #no olvidar botpy\Scripts\activate
 
+#-------------------configuración del bot-----------------------
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# Configuración inicial
 load_dotenv(dotenv_path='C:\\Users\\ignac\\Desktop\\cosas PY\\discord\\Token.env')
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True  
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Carga de cogs
+@bot.event
+async def on_ready():
+    """Evento que se ejecuta cuando el bot se conecta exitosamente"""
+    print(f'\n{"-"*40}')
+    print(f'🔌 Bot conectado como: {bot.user.name} (ID: {bot.user.id})')
+    print(f'🕒 Hora de conexión: {datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+    print(f'📊 Servidores: {len(bot.guilds)}')
+    print(f'👥 Usuarios: {sum(g.member_count for g in bot.guilds)}')
+    print(f'{"-"*40}\n')
+    
+    #cambiar el estado del bot
+    await bot.change_presence(
+        activity=discord.Activity(
+            type=discord.ActivityType.watching,
+            name=f"!ayuda en {len(bot.guilds)} servidores"
+        ),
+        status=discord.Status.online
+    )
+
 async def load_cogs():
+    
     cogs_to_load = [
         ('comandos.recargar', Recargar),
         ('comandos.estadisticas', Estadisticas),
-        ('comandos.casino', Ruleta),  
+        ('comandos.casino', Ruleta),
         ('GLaDOS', GLaDOS),
         ('comandos.encuesta', Encuesta),
+        ('comandos.ayuda', Ayuda),
+        ('comandos.reto', Reto),
     ]
+    
+    loaded = []
+    failed = []
+    
+    print("\n🔧 Cargando módulos:")
+    max_name_len = max(len(name) for name, _ in cogs_to_load)
     
     for cog_name, cog_class in cogs_to_load:
         try:
+            # Intenta cargar el Cog
             await bot.add_cog(cog_class(bot))
-            print(f'✅ {cog_name} cargado correctamente')
+            
+            # Verificación adicional
+            if bot.get_cog(cog_class.__name__):
+                print(f'✅ {cog_name.ljust(max_name_len)} - Cargado correctamente')
+                loaded.append(cog_name)
+            else:
+                raise Exception("El Cog no se registró correctamente")
+                
         except Exception as e:
-            print(f'❌ Error al cargar {cog_name}: {e}')
-        
+            error_msg = f"{type(e).__name__}: {str(e)[:100]}"
+            print(f'❌ {cog_name.ljust(max_name_len)} - Error: {error_msg}')
+            failed.append((cog_name, error_msg))
+    
+    # Resumen de carga
+    print("\n" + "="*50)
+    print(f"📦 Resumen de carga:")
+    print(f"🟢 Cogs cargados: {len(loaded)}")
+    print(f"🔴 Cogs fallidos: {len(failed)}")
+    
+    if failed:
+        print("\nErrores detallados:")
+        for cog, error in failed:
+            print(f"• {cog}: {error}")
+    
+    # Verificación de comandos duplicados
+    all_commands = [cmd.name for cmd in bot.commands]
+    duplicates = set([cmd for cmd in all_commands if all_commands.count(cmd) > 1])
+    
+    if duplicates:
+        print("\n⚠️ Advertencia: Comandos duplicados detectados:")
+        for cmd in duplicates:
+            print(f"• {cmd}")
+    
+    return len(failed) == 0  
+
+async def main():
+    """Función principal de inicio del bot"""
+    print("\n🚀 Iniciando bot...")
+    
+    # Configurar logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s | %(levelname)s | %(message)s',
+        handlers=[
+            logging.FileHandler('bot.log'),
+            logging.StreamHandler()
+        ]
+    )
+    
+    # Cargar módulos
+    success = await load_cogs()
+    
+    if not success:
+        print("\n⚠️ Algunos módulos no cargaron correctamente")
+    
+    try:
+        await bot.start(os.getenv("DISCORD_TOKEN"))
+    except discord.LoginFailure:
+        print("❌ Error de autenticación: Token inválido")
+    except KeyboardInterrupt:
+        print("\n🛑 Bot detenido manualmente")
+    except Exception as e:
+        print(f"\n💥 Error crítico: {type(e).__name__}: {e}")
+    finally:
+        print("\n🔌 Desconectando...")
+        if not bot.is_closed():
+            await bot.close()
+
+#-----------------------------comandos-----------------------------------------------------
+
+
 # Comando para borrar mensajes
 @bot.command()
 async def borrar(ctx, cantidad: int = 5):
@@ -59,76 +158,6 @@ async def ppt(ctx):
     jugador = ctx.author
     await jugar_partida(ctx, jugador)  
 
-# Comando de ayuda
-@bot.command()
-async def ayuda(ctx):
-    embed = discord.Embed(
-        title="🆘 Comandos Disponibles",
-        description="Aquí tienes todos los comandos que puedes usar.",
-        color=discord.Color.blue()
-    )
-
-    comandos = [
-        
-        ("🤖 !glados_info", "Muestra información sobre GLaDOS."),
-        ("🪨📄✂️ !ppt", "Juega piedra, papel o tijeras contra el bot."),
-        ("⚔️ !reto @usuario", "Desafía a otro usuario a un duelo de piedra, papel o tijeras."),
-        ("💵 !dolar", "Muestra la cotización actual del dólar en Argentina."),
-        ("🔮 !horoscopo [signo]", "Recibe un horóscopo 100% confiable para tu signo."),
-        ("🌤️ !clima [ciudad]", "Obtén información del clima de la ciudad que elijas."),
-        ("🎡 !ruleta [numero] [apuesta]", "Simula una ruleta. ¡Apuesta por número, color o par/impar!"),
-        ("💸 !pagos", "Muestra los pagos de la ruleta según el tipo de apuesta."),
-        ("⟳ !recargar", "Recarga tu saldo con 100 monedas."),
-        ("💰 !saldo", "Muestra tu saldo actual."),
-        ("📊 !encuesta pregunta | opción1 | opción2 | opción3 ... opción10", "Crea una encuesta."),
-        ("🪙 !crypto [criptomoneda]", "precios de criptomonedas."),
-        ("🗑️ !borrar [cantidad]", "Borra la cantidad de mensajes que elijas.(uso excusivo de admins)"),
-    ]
-
-    for nombre, descripcion in comandos:
-        embed.add_field(name=nombre, value=descripcion, inline=False)
-
-    await ctx.send(embed=embed)
-
-# Comando para iniciar el reto entre dos jugadores
-@bot.command()
-async def reto(ctx, oponente: discord.Member):
-    jugador1 = ctx.author
-    jugador2 = oponente
-
-    if not oponente:
-        await ctx.send("¡Por favor menciona a un oponente para retarlo! Usa: `!reto @jugador`.")
-        return
-
-    if oponente.bot:
-        await ctx.send("No puedes jugar contra un bot. ¡Busca un compañero humano! 🤖")
-        return
-
-    if oponente == jugador1:
-        await ctx.send("¡No puedes jugar contigo mismo! 🤣")
-        return
-
-    await ctx.send(f"¡{jugador1.mention} ha retado a {jugador2.mention} a un Piedra, Papel o Tijeras! ¡Que comience el juego!")
-
-    view1 = RetoEleccionView(jugador1)
-    await ctx.send(f"{jugador1.mention}, elegí tu opción:", view=view1)
-    await view1.wait()
-    if view1.eleccion is None:
-        await ctx.send("⏰ Tiempo agotado para el Jugador 1.")
-        return
-
-    view2 = RetoEleccionView(jugador2)
-    await ctx.send(f"{jugador2.mention}, elegí tu opción:", view=view2)
-    await view2.wait()
-    if view2.eleccion is None:
-        await ctx.send("⏰ Tiempo agotado para el Jugador 2.")
-        return
-
-    await ctx.send(f"🧑‍🎮 {jugador1.name} eligió: {view1.eleccion}")
-    await ctx.send(f"🧑‍🎮 {jugador2.name} eligió: {view2.eleccion}")
-
-    resultado = determinar_ganador(view1.eleccion, view2.eleccion)
-    await ctx.send(f"🏆 Resultado: {resultado}")
 
 # Comando para obtener la cotización del dolar
 @bot.command()
@@ -146,9 +175,6 @@ async def horoscopo(ctx, signo: str = None):
 async def clima(ctx, *, ciudad: str): 
     await obtener_clima(ctx, ciudad)
 
-
-
-
 #saldo
 @bot.command()
 async def saldo(ctx):
@@ -156,7 +182,7 @@ async def saldo(ctx):
     saldo_actual = casino_manager.obtener_saldo(usuario_id)
     await ctx.send(f"💰 {ctx.author.mention}, tu saldo actual es de **{saldo_actual} monedas**.")
 
-#payouts
+#pagos
 @bot.command()
 async def pagos(ctx):
     mensaje = (
@@ -184,15 +210,6 @@ async def crypto(ctx, moneda: str = None):
 
 
 
-#Error en los comandos
-@bot.event
-async def on_command_error(ctx, error):
-    if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("❌ Faltan argumentos para este comando. Escribe `!ayuda` para ver cómo usarlo.")
-    elif isinstance(error, commands.CommandNotFound):
-        await ctx.send("❌ Ese comando no existe. Usa `!ayuda` para ver la lista.")
-    else:
-        await ctx.send(f"⚠️ Ha ocurrido un error inesperado: `{str(error)}`")
 
 
 
@@ -200,25 +217,23 @@ async def on_command_error(ctx, error):
 
 
 
-#---------------------ESTO SIEMPRE VA AL FINAL-----------------------------------------------------
 
 
 
-
-# Iniciar el bot con el token correcto
-@bot.event
-async def on_ready():
-    print(f'Bot conectado como {bot.user}')
-    print('------')
-
-async def main():
-    await load_cogs()
-    await bot.start(os.getenv("DISCORD_TOKEN"))
+#---------------------inicio del bot-----------------------------------------------------
 
 if __name__ == "__main__":
+    def handle_exception(exc_type, exc_value, exc_traceback):
+        if not issubclass(exc_type, KeyboardInterrupt):
+            logging.error("Excepción no capturada", exc_info=(exc_type, exc_value, exc_traceback))
+    
+    sys.excepthook = handle_exception
+
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\nBot detenido manualmente")
+        print("\n🛑 Bot detenido manualmente")
+        # Asegurar cierre limpio
+        asyncio.run(bot.close()) if not bot.is_closed() else None
     except Exception as e:
-        print(f"Error inesperado: {e}")
+        logging.critical(f"ERROR: {type(e).__name__}: {e}")
