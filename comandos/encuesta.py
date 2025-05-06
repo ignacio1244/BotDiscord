@@ -13,26 +13,26 @@ class Encuesta(commands.Cog):
     @commands.command(name="encuesta")
     async def crear_encuesta(self, ctx, *, raw: str = None):
         """Crea una encuesta con hasta 10 opciones"""
-        # Validación básica
+        
         if not raw or "|" not in raw:
             return await self.mostrar_ayuda(ctx)
 
-        # Procesamiento de la entrada
+        
         parts = [p.strip() for p in raw.split("|") if p.strip()]
         pregunta = parts[0]
         opciones = parts[1:]
 
-        # Validación de opciones
+        
         if len(opciones) < MIN_OPCIONES:
             return await ctx.send(f"❌ Necesitas al menos {MIN_OPCIONES} opciones válidas.")
         if len(opciones) > MAX_OPCIONES:
             return await ctx.send(f"❌ Máximo {MAX_OPCIONES} opciones permitidas.")
 
-        # Creación del embed
+        
         embed = self.crear_embed_encuesta(ctx, pregunta, opciones)
         mensaje = await ctx.send(embed=embed)
         
-        # Añadir reacciones
+        
         await self.agregar_reacciones(mensaje, len(opciones))
 
     def crear_embed_encuesta(self, ctx, pregunta, opciones):
@@ -43,7 +43,7 @@ class Encuesta(commands.Cog):
             timestamp=datetime.utcnow()
         )
         
-        # Descripción con formato mejorado
+        
         descripcion = "\n".join(
             f"{EMOJIS[i]} {opt.capitalize()}" 
             for i, opt in enumerate(opciones)
@@ -54,7 +54,7 @@ class Encuesta(commands.Cog):
             icon_url=ctx.author.display_avatar.url
         )
         
-        # Campo adicional con instrucciones
+        
         embed.add_field(
             name="Instrucciones",
             value="Reacciona con el emoji correspondiente a tu elección",
@@ -69,7 +69,7 @@ class Encuesta(commands.Cog):
             try:
                 await mensaje.add_reaction(EMOJIS[i])
             except discord.HTTPException:
-                continue  # Manejo silencioso de errores de reacción
+                continue  
 
     async def mostrar_ayuda(self, ctx):
         """Muestra mensaje de ayuda con formato embed"""

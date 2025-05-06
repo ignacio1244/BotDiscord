@@ -1,12 +1,43 @@
 import random
+import json
+import os
+from pathlib import Path
 import discord
 from discord.ext import commands
 
-# Intenta ambas formas de importación para mayor compatibilidad
-try:
-    from .casino_saldos import casino_manager  # Import relativo
-except ImportError:
-    from comandos.casino_saldos import casino_manager  # Import absoluto
+class CasinoManager:
+    def __init__(self):
+        self.data_path = Path("utils/saldos_casino.json")
+        self._ensure_data_file()
+
+    def _ensure_data_file(self):
+        """Crea el archivo si no existe"""
+        self.data_path.parent.mkdir(exist_ok=True)
+        if not self.data_path.exists():
+            with open(self.data_path, 'w') as f:
+                json.dump({}, f)
+
+    def obtener_saldo(self, usuario_id):
+        try:
+            with open(self.data_path, 'r') as f:
+                return json.load(f).get(str(usuario_id), 100)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return 100
+
+    def actualizar_saldo(self, usuario_id, monto):
+        try:
+            with open(self.data_path, 'r') as f:
+                data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            data = {}
+        
+        data[str(usuario_id)] = monto
+        
+        with open(self.data_path, 'w') as f:
+            json.dump(data, f, indent=4)
+
+# Crear una instancia del administrador de casino
+casino_manager = CasinoManager()
 
 colores = {
     "rojo": [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36],
@@ -32,7 +63,7 @@ class Ruleta(commands.Cog):
         usuario_id = str(ctx.author.id)
         saldo = casino_manager.obtener_saldo(usuario_id)
 
-        # Validaciones iniciales
+        
         if not tipo_apuesta or valor_apuesta is None:
             embed = discord.Embed(
                 title="❌ Uso incorrecto",
@@ -55,23 +86,23 @@ class Ruleta(commands.Cog):
             await ctx.send(embed=embed)
             return
         
-        # Validación de apuesta a número
+        
         if tipo_apuesta.isdigit():
             numero_apuesta = int(tipo_apuesta)
             if numero_apuesta < 0 or numero_apuesta > 36:
                 await ctx.send(f"{ctx.author.mention} El número debe estar entre 0 y 36.")
                 return
 
-        # Generar número ganador y determinar su color
+        
         numero_ganador = random.randint(0, 36)
         color_ganador = self.obtener_color_numero(numero_ganador)
         
-        # Primera línea del embed
+        
         resultado = f"🎡 La ruleta giró y cayó en el **{numero_ganador} {color_ganador}**.\n"
         ganancia = 0
 
-        # Determinar resultado
-        if tipo_apuesta.isdigit():  # Apuesta a número exacto
+        
+        if tipo_apuesta.isdigit():  
             if int(tipo_apuesta) == numero_ganador:
                 ganancia = valor_apuesta * 36
                 resultado += f"🎉 ¡Ganaste! Apostaste al número exacto y ganás {ganancia} monedas."
@@ -101,7 +132,7 @@ class Ruleta(commands.Cog):
             await ctx.send(embed=embed)
             return
 
-        # Actualizar saldo y mostrar resultados
+        
         nuevo_saldo = saldo - valor_apuesta + ganancia
         casino_manager.actualizar_saldo(usuario_id, nuevo_saldo)
 

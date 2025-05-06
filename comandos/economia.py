@@ -1,11 +1,30 @@
 import discord
 from discord.ext import commands
-from comandos.casino_saldos import casino_manager
+from comandos.casino import casino_manager
 
-class Recargar(commands.Cog):
+class Economia(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    @commands.command(name="saldo")
+    async def saldo(self, ctx):
+        """Muestra el saldo actual del usuario"""
+        usuario_id = str(ctx.author.id)
+        saldo_actual = casino_manager.obtener_saldo(usuario_id)
+        await ctx.send(f"💰 {ctx.author.mention}, tu saldo actual es de **{saldo_actual} monedas**.")
+
+    @commands.command(name="pagos")
+    async def pagos(self, ctx):
+        """Muestra información sobre los pagos de la ruleta"""
+        mensaje = (
+            "**📊 pagos de la ruleta:**\n"
+            "- Apostar a un **número exacto (0-36)**: x36\n"
+            "- Apostar a **rojo o negro**: x2\n"
+            "- Apostar a **par o impar**: x2\n"
+            "Ejemplo: si apostás 100 monedas a 'rojo' y ganás, recibís 200 (100 tu apuesta + 100 ganancia)."
+        )
+        await ctx.send(mensaje)
+        
     @commands.command(
         name="recargar",
         aliases=["recarga"],
@@ -49,9 +68,8 @@ class Recargar(commands.Cog):
             )
             await ctx.send(embed=embed)
         else:
-            # Registrar otros errores
             print(f"Error en comando recargar: {error}")
             raise error
 
 async def setup(bot):
-    await bot.add_cog(Recargar(bot))
+    await bot.add_cog(Economia(bot))
