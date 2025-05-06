@@ -14,8 +14,7 @@ from comandos.dolar import Dolar
 from comandos.clima import Clima
 from comandos.ayuda import Ayuda
 from comandos.casino import Ruleta
-from comandos.crypto import Crypto
-from comandos.musica import Musica
+from comandos.billetera import Billetera
 from comandos.economia import Economia
 from comandos.encuesta import Encuesta
 from comandos.horoscopo import Horoscopo
@@ -64,17 +63,16 @@ async def load_cogs():
         ('GLaDOS', GLaDOS),
         ('comandos.reto', Reto),
         ('comandos.ayuda', Ayuda),
-        ('comandos.dolar', Dolar),
         ('comandos.clima', Clima),
         ('comandos.casino', Ruleta),
-        ('comandos.crypto', Crypto),
-        ('comandos.musica', Musica),
         ('comandos.encuesta', Encuesta),
         ('comandos.economia', Economia),
+        ('comandos.billetera', Billetera),
         ('comandos.horoscopo', Horoscopo),
         ('comandos.moderacion', Moderacion),
         ('comandos.ppyt', PiedraPapelTijeras),
         ('comandos.estadisticas', Estadisticas),
+        
 
 
     ]

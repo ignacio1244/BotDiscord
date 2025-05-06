@@ -604,3 +604,5 @@ Traceback (most recent call last):
     return self.loop.create_task(wrapped, name=f'discord.py: {event_name}')
            ^^^^^^^^^^^^^^^^^^^^^
 AttributeError: '_MissingSentinel' object has no attribute 'create_task'
+2025-05-05 23:44:28,080 | INFO | logging in using static token
+2025-05-05 23:44:29,487 | INFO | Shard ID None has connected to Gateway (Session ID: 623aafe13660f107c0e5c769e32566b0).
