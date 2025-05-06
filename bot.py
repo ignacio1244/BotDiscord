@@ -1,29 +1,31 @@
 import os
 import sys
-import discord
+import signal
 import GLaDOS
+import discord
 import asyncio
 import logging
 import datetime
-import signal
-from comandos.moderacion import borrar_mensajes
-from comandos.ppyt import jugar_partida
+from GLaDOS import GLaDOS
 from dotenv import load_dotenv
-from discord.ext import commands
-from comandos.dolar import obtener_cotizacion_dolar
-from comandos.casino_saldos import casino_manager 
 from comandos.reto import Reto
-from comandos.horoscopo import obtener_horoscopo
-from comandos.clima import obtener_clima
-from comandos.casino import Ruleta
-from comandos.encuesta import Encuesta
-from comandos.crypto import obtener_precio_coincap    
-from GLaDOS import GLaDOS 
-from comandos.estadisticas_comando import Estadisticas
-from comandos.recargar import Recargar
+from discord.ext import commands
+from comandos.dolar import Dolar
+from comandos.clima import Clima
 from comandos.ayuda import Ayuda
+from comandos.casino import Ruleta
+from comandos.crypto import Crypto
+from comandos.musica import Musica
+from comandos.economia import Economia
+from comandos.encuesta import Encuesta
+from comandos.horoscopo import Horoscopo
+from comandos.moderacion import Moderacion
+from comandos.ppyt import PiedraPapelTijeras
+from comandos.estadisticas_comando import Estadisticas
 
-#no olvidar botpy\Scripts\activate
+#-------------------NO OLVIDAR ACTIVAR-----------------------
+
+#                  botpy\Scripts\activate
 
 #-------------------configuración del bot-----------------------
 
@@ -57,13 +59,24 @@ async def on_ready():
 async def load_cogs():
     
     cogs_to_load = [
-        ('comandos.recargar', Recargar),
-        ('comandos.estadisticas', Estadisticas),
-        ('comandos.casino', Ruleta),
+        
+        
         ('GLaDOS', GLaDOS),
-        ('comandos.encuesta', Encuesta),
-        ('comandos.ayuda', Ayuda),
         ('comandos.reto', Reto),
+        ('comandos.ayuda', Ayuda),
+        ('comandos.dolar', Dolar),
+        ('comandos.clima', Clima),
+        ('comandos.casino', Ruleta),
+        ('comandos.crypto', Crypto),
+        ('comandos.musica', Musica),
+        ('comandos.encuesta', Encuesta),
+        ('comandos.economia', Economia),
+        ('comandos.horoscopo', Horoscopo),
+        ('comandos.moderacion', Moderacion),
+        ('comandos.ppyt', PiedraPapelTijeras),
+        ('comandos.estadisticas', Estadisticas),
+
+
     ]
     
     loaded = []
@@ -147,65 +160,6 @@ async def main():
 #-----------------------------comandos-----------------------------------------------------
 
 
-# Comando para borrar mensajes
-@bot.command()
-async def borrar(ctx, cantidad: int = 5):
-    await borrar_mensajes(ctx, cantidad)
-
-# Comando para jugar piedra, papel o tijeras (user vs bot)
-@bot.command()
-async def ppt(ctx):
-    jugador = ctx.author
-    await jugar_partida(ctx, jugador)  
-
-
-# Comando para obtener la cotización del dolar
-@bot.command()
-async def dolar(ctx):
-    await obtener_cotizacion_dolar(ctx)
-
-# Comando para obtener el horoscopo
-@bot.command()
-async def horoscopo(ctx, signo: str = None):
-    mensaje = obtener_horoscopo(signo)
-    await ctx.send(mensaje)
-
-#clima
-@bot.command()
-async def clima(ctx, *, ciudad: str): 
-    await obtener_clima(ctx, ciudad)
-
-#saldo
-@bot.command()
-async def saldo(ctx):
-    usuario_id = str(ctx.author.id)
-    saldo_actual = casino_manager.obtener_saldo(usuario_id)
-    await ctx.send(f"💰 {ctx.author.mention}, tu saldo actual es de **{saldo_actual} monedas**.")
-
-#pagos
-@bot.command()
-async def pagos(ctx):
-    mensaje = (
-        "**📊 pagos de la ruleta:**\n"
-        "- Apostar a un **número exacto (0-36)**: x36\n"
-        "- Apostar a **rojo o negro**: x2\n"
-        "- Apostar a **par o impar**: x2\n"
-        "Ejemplo: si apostás 100 monedas a 'rojo' y ganás, recibís 200 (100 tu apuesta + 100 ganancia)."
-    )
-    await ctx.send(mensaje)
-
-
-
-#precio de criptomonedas
-@bot.command(name="crypto")
-async def crypto(ctx, moneda: str = None):
-    if not moneda:
-        return await ctx.send("❌ Indica una criptomoneda. Ejemplo: `!crypto bitcoin` o `!crypto btc`")
-    res = await obtener_precio_coincap(moneda)
-    if not res:
-        return await ctx.send(f"❌ No encontré `{moneda}` en CoinCap.")
-    id, sym, price = res
-    await ctx.send(f"💱 **{sym.upper()}** (id:`{id}`) → **${price:,.2f} USD**")
 
 
 
@@ -220,7 +174,9 @@ async def crypto(ctx, moneda: str = None):
 
 
 
-#---------------------inicio del bot-----------------------------------------------------
+
+
+#-------------------------INICIO DEL BOT-------------------------------------------------
 
 if __name__ == "__main__":
     def handle_exception(exc_type, exc_value, exc_traceback):
