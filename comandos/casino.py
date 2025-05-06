@@ -1,12 +1,43 @@
 import random
+import json
+import os
+from pathlib import Path
 import discord
 from discord.ext import commands
 
+class CasinoManager:
+    def __init__(self):
+        self.data_path = Path("utils/saldos_casino.json")
+        self._ensure_data_file()
 
-try:
-    from .casino_saldos import casino_manager 
-except ImportError:
-    from comandos.casino_saldos import casino_manager 
+    def _ensure_data_file(self):
+        """Crea el archivo si no existe"""
+        self.data_path.parent.mkdir(exist_ok=True)
+        if not self.data_path.exists():
+            with open(self.data_path, 'w') as f:
+                json.dump({}, f)
+
+    def obtener_saldo(self, usuario_id):
+        try:
+            with open(self.data_path, 'r') as f:
+                return json.load(f).get(str(usuario_id), 100)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return 100
+
+    def actualizar_saldo(self, usuario_id, monto):
+        try:
+            with open(self.data_path, 'r') as f:
+                data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            data = {}
+        
+        data[str(usuario_id)] = monto
+        
+        with open(self.data_path, 'w') as f:
+            json.dump(data, f, indent=4)
+
+# Crear una instancia del administrador de casino
+casino_manager = CasinoManager()
 
 colores = {
     "rojo": [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36],
