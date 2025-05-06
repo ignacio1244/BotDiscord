@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from comandos.casino_saldos import casino_manager
+from comandos.casino import casino_manager
 
 class Economia(commands.Cog):
     def __init__(self, bot):
