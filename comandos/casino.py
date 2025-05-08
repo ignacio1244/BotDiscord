@@ -4,6 +4,10 @@ import os
 from pathlib import Path
 import discord
 from discord.ext import commands
+import sys
+
+sys.path.append(str(Path(__file__).parent.parent))
+from comandos.estadisticas import EstadisticasManager
 
 class CasinoManager:
     def __init__(self):
@@ -36,7 +40,6 @@ class CasinoManager:
         with open(self.data_path, 'w') as f:
             json.dump(data, f, indent=4)
 
-# Crear una instancia del administrador de casino
 casino_manager = CasinoManager()
 
 colores = {
@@ -47,6 +50,7 @@ colores = {
 class Ruleta(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.stats_manager = EstadisticasManager()
 
     def obtener_color_numero(self, numero):
         """Determina el color del número ganador"""
@@ -101,28 +105,38 @@ class Ruleta(commands.Cog):
         resultado = f"🎡 La ruleta giró y cayó en el **{numero_ganador} {color_ganador}**.\n"
         ganancia = 0
 
+        stats = self.stats_manager.obtener_estadisticas(ctx.author.id)
+        stats["ruleta"]["apuestas_totales"] += 1
+        self.stats_manager.guardar_estadisticas(ctx.author.id, stats)
         
         if tipo_apuesta.isdigit():  
             if int(tipo_apuesta) == numero_ganador:
                 ganancia = valor_apuesta * 36
                 resultado += f"🎉 ¡Ganaste! Apostaste al número exacto y ganás {ganancia} monedas."
+                self.stats_manager.actualizar_estadisticas_ruleta(ctx.author.id, ganancia)
             else:
                 resultado += "😢 No acertaste el número exacto."
+                self.stats_manager.actualizar_estadisticas_ruleta(ctx.author.id, -valor_apuesta)
         elif tipo_apuesta.lower() in ["rojo", "negro"]:
             if numero_ganador in colores[tipo_apuesta.lower()]:
                 ganancia = valor_apuesta * 2
                 resultado += f"🎉 ¡Ganaste! Acertaste el color y ganás {ganancia} monedas."
+                self.stats_manager.registrar_ganancia_ruleta(ctx.author.id, ganancia)
             else:
                 resultado += "😢 No acertaste el color."
+                self.stats_manager.registrar_perdida_ruleta(ctx.author.id, valor_apuesta)
         elif tipo_apuesta.lower() in ["par", "impar"]:
             if numero_ganador == 0:
                 resultado += "😢 Cayó el 0, no es ni par ni impar. Perdiste."
+                self.stats_manager.registrar_perdida_ruleta(ctx.author.id, valor_apuesta)
             elif (numero_ganador % 2 == 0 and tipo_apuesta.lower() == "par") or \
                  (numero_ganador % 2 == 1 and tipo_apuesta.lower() == "impar"):
                 ganancia = valor_apuesta * 2
                 resultado += f"🎉 ¡Ganaste! Acertaste par/impar y ganás {ganancia} monedas."
+                self.stats_manager.registrar_ganancia_ruleta(ctx.author.id, ganancia)
             else:
                 resultado += "😢 No acertaste par/impar."
+                self.stats_manager.registrar_perdida_ruleta(ctx.author.id, valor_apuesta)
         else:
             embed = discord.Embed(
                 title="❌ Apuesta inválida",

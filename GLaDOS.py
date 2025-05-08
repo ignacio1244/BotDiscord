@@ -1,4 +1,5 @@
 # GLaDOS.py
+import os
 import discord
 from discord.ext import commands
 import random
@@ -6,8 +7,8 @@ import random
 class GLaDOS(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.CANAL_BIENVENIDA_ID = 1368303209147531285
-        
+        canal_id = os.getenv("CANAL_BIENVENIDA_ID", None)
+        self.canal_bienvenida = int(canal_id) if canal_id else None
         
         self.FRASES_PRESENTACION = [
             "Hola. Soy GLaDOS. Te estaré observando. Cada error será documentado. Para tu seguridad, claro.",
@@ -167,27 +168,29 @@ class GLaDOS(commands.Cog):
     
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        canal = member.guild.get_channel(self.CANAL_BIENVENIDA_ID)
-        if canal:
-            mensaje = random.choice(self.MENSAJES_BIENVENIDA).format(usuario=member.mention)
-            embed = discord.Embed(
-                title="👤 Nuevo sujeto de prueba",
-                description=mensaje,
-                color=discord.Color.green()
-            )
-            await canal.send(embed=embed)
+        if self.canal_bienvenida:
+            canal = member.guild.get_channel(self.canal_bienvenida)
+            if canal:
+                mensaje = random.choice(self.MENSAJES_BIENVENIDA).format(usuario=member.mention)
+                embed = discord.Embed(
+                    title="👤 Nuevo sujeto de prueba",
+                    description=mensaje,
+                    color=discord.Color.green()
+                )
+                await canal.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        canal = member.guild.get_channel(self.CANAL_BIENVENIDA_ID)
-        if canal:
-            mensaje = random.choice(self.MENSAJES_DESPEDIDA).format(usuario=member.name)
-            embed = discord.Embed(
-                title="💨 Sujeto ha huido",
-                description=mensaje,
-                color=discord.Color.red()
-            )
-            await canal.send(embed=embed)
+        if self.canal_bienvenida:
+            canal = member.guild.get_channel(self.canal_bienvenida)
+            if canal:
+                mensaje = random.choice(self.MENSAJES_DESPEDIDA).format(usuario=member.name)
+                embed = discord.Embed(
+                    title="💨 Sujeto ha huido",
+                    description=mensaje,
+                    color=discord.Color.red()
+                )
+                await canal.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message(self, message):

@@ -1,7 +1,15 @@
+import sys
+import os
 import random
 import discord
 from discord.ext import commands
 from discord.ui import View, Button
+
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent.parent))
+from comandos.estadisticas import EstadisticasManager
+
 EMOJIS = {
     "piedra": "✊",
     "papel": "✋",
@@ -42,9 +50,10 @@ class EleccionView(View):
     async def on_timeout(self):
         self.eleccion = None
 
-class PiedraPapelTijeras(commands.Cog):
+class PPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.stats_manager = EstadisticasManager()
 
     @commands.command(name="ppt")
     async def ppt(self, ctx):
@@ -69,8 +78,12 @@ class PiedraPapelTijeras(commands.Cog):
 
             if "Ganaste" in resultado:
                 jugador_puntos += 1
+                self.stats_manager.actualizar_estadisticas_ppt(jugador.id, 'victoria')
             elif "Perdiste" in resultado:
                 bot_puntos += 1
+                self.stats_manager.actualizar_estadisticas_ppt(jugador.id, 'derrota')
+            else:
+                self.stats_manager.actualizar_estadisticas_ppt(jugador.id, 'empate')
 
             await ctx.send(f"{EMOJIS[view.eleccion]} vs {EMOJIS[eleccion_bot]} - {resultado}")
             await ctx.send(f"🏆 Marcador: {jugador.name} {jugador_puntos} - Bot {bot_puntos}")
@@ -81,4 +94,4 @@ class PiedraPapelTijeras(commands.Cog):
             await ctx.send(f"💀 El bot ganó la partida. ¡Suerte la próxima!")
 
 async def setup(bot):
-    await bot.add_cog(PiedraPapelTijeras(bot))
+    await bot.add_cog(PPT(bot))

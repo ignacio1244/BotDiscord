@@ -1,6 +1,34 @@
 {
-    "665668290605219885":{
+    "665668290605219885": {
         "victorias": 3,
-        "derrotas": 2
+        "derrotas": 2,
+        "ppt": {
+            "victorias": 8,
+            "derrotas": 2
+        },
+        "ruleta": {
+            "ganancias": 120,
+            "perdidas": 20,
+            "apuestas_totales": 10
+        },
+        "reto": {
+            "victorias": 0,
+            "derrotas": 1
+        }
+    },
+    "853036678628638760": {
+        "ppt": {
+            "victorias": 0,
+            "derrotas": 0
+        },
+        "reto": {
+            "victorias": 1,
+            "derrotas": 0
+        },
+        "ruleta": {
+            "ganancias": 0,
+            "perdidas": 0,
+            "apuestas_totales": 0
+        }
     }
 }
