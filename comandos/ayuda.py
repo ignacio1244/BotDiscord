@@ -8,6 +8,7 @@ class Ayuda(commands.Cog):
             "🎮 Juegos": [
                 ("🪨📄✂️ !ppt", "Juega piedra, papel o tijeras contra el bot"),
                 ("⚔️ !reto @usuario", "Desafía a otro usuario a un duelo"),
+                ("🔠 !wordle", "Juega a wordle"),
                 ("🎡 !ruleta [tipo] [apuesta]", "Ruleta del casino"),
                 ("💸 !pagos", "Multiplicadores de la ruleta")
             ],
