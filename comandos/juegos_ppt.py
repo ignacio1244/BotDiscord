@@ -1,20 +1,62 @@
-#reto.py
 import discord
+import random
 from discord.ext import commands
 from discord.ui import View, Button
 from comandos.estadisticas import EstadisticasManager
 
-class Reto(commands.Cog):
+# Emojis unificados para ambos modos de juego
+EMOJIS = {
+    "piedra": "🗿",
+    "papel": "📄",
+    "tijeras": "✂️"
+}
+
+class JuegosPPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.emoji_opciones = {
-            "piedra": "🗿",
-            "papel": "📄",
-            "tijeras": "✂️"
-        }
-        
         self.stats_manager = EstadisticasManager()
-        
+    
+    #--------------------- Comando para jugar contra el bot ---------------------
+    @commands.command(name="ppt")
+    async def ppt(self, ctx):
+        """Juega a piedra, papel o tijeras contra el bot"""
+        jugador = ctx.author
+        jugador_puntos = 0
+        bot_puntos = 0
+
+        await ctx.send(f"🎮 {jugador.mention} ¡Vamos a jugar al mejor de 3 contra el bot!")
+
+        while jugador_puntos < 2 and bot_puntos < 2:
+            view = EleccionView(jugador)
+            mensaje = await ctx.send("Elegí una opción:", view=view)
+            await view.wait()
+
+            if view.eleccion is None:
+                await ctx.send("⏰ No elegiste a tiempo. ¡Se canceló la partida!")
+                return
+
+            opciones = ["piedra", "papel", "tijeras"]
+            eleccion_bot = random.choice(opciones)
+            resultado, ganador = self._determinar_ganador(view.eleccion, eleccion_bot)
+
+            if ganador == 1:  # Jugador gana
+                jugador_puntos += 1
+                self.stats_manager.actualizar_estadisticas_ppt(jugador.id, 'victoria')
+            elif ganador == 2:  # Bot gana
+                bot_puntos += 1
+                self.stats_manager.actualizar_estadisticas_ppt(jugador.id, 'derrota')
+            else:  # Empate
+                self.stats_manager.actualizar_estadisticas_ppt(jugador.id, 'empate')
+
+            await ctx.send(f"{EMOJIS[view.eleccion]} vs {EMOJIS[eleccion_bot]} - {resultado}")
+            await ctx.send(f"🏆 Marcador: {jugador.name} {jugador_puntos} - Bot {bot_puntos}")
+
+        if jugador_puntos == 2:
+            await ctx.send(f"🎉 Felicitaciones {jugador.mention}, ¡ganaste la partida!")
+        else:
+            await ctx.send(f"💀 El bot ganó la partida. ¡Suerte la próxima!")
+
+    #--------------------- Comando para retar a otro usuario ---------------------
     @commands.command(name="reto", aliases=["duelo", "challenge"])
     async def desafiar_usuario(self, ctx, oponente: discord.Member = None):
         """Inicia un duelo de piedra, papel o tijeras contra otro usuario"""
@@ -28,7 +70,6 @@ class Reto(commands.Cog):
         if oponente == ctx.author:
             return await self._enviar_error(ctx, "¡No puedes jugar contigo mismo! 🤣")
 
-        
         await self._iniciar_duelo(ctx, ctx.author, oponente)
 
     async def _enviar_error(self, ctx, mensaje):
@@ -40,8 +81,6 @@ class Reto(commands.Cog):
         await ctx.send(embed=embed)
 
     async def _iniciar_duelo(self, ctx, jugador1, jugador2):
-        
-        
         embed = discord.Embed(
             title="⚔️ Duelo de Piedra, Papel o Tijeras",
             description=f"{jugador1.mention} ha retado a {jugador2.mention}!\n\n"
@@ -99,7 +138,7 @@ class Reto(commands.Cog):
         
         embed.add_field(
             name=f"{jugador1.display_name}",
-            value=f"{self.emoji_opciones[eleccion1]} {eleccion1.capitalize()}",
+            value=f"{EMOJIS[eleccion1]} {eleccion1.capitalize()}",
             inline=True
         )
         embed.add_field(
@@ -109,7 +148,7 @@ class Reto(commands.Cog):
         )
         embed.add_field(
             name=f"{jugador2.display_name}",
-            value=f"{self.emoji_opciones[eleccion2]} {eleccion2.capitalize()}",
+            value=f"{EMOJIS[eleccion2]} {eleccion2.capitalize()}",
             inline=True
         )
         
@@ -176,15 +215,15 @@ class EleccionView(View):
         self.jugador = jugador
         self.eleccion = None
 
-    @discord.ui.button(label="🗿 Piedra", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label=f"{EMOJIS['piedra']} Piedra", style=discord.ButtonStyle.danger)
     async def piedra(self, interaction: discord.Interaction, button: Button):
         await self._procesar_eleccion(interaction, "piedra")
 
-    @discord.ui.button(label="📄 Papel", style=discord.ButtonStyle.success, row=0)
+    @discord.ui.button(label=f"{EMOJIS['papel']} Papel", style=discord.ButtonStyle.primary)
     async def papel(self, interaction: discord.Interaction, button: Button):
         await self._procesar_eleccion(interaction, "papel")
 
-    @discord.ui.button(label="✂️ Tijeras", style=discord.ButtonStyle.danger, row=0)
+    @discord.ui.button(label=f"{EMOJIS['tijeras']} Tijeras", style=discord.ButtonStyle.success)
     async def tijeras(self, interaction: discord.Interaction, button: Button):
         await self._procesar_eleccion(interaction, "tijeras")
 
@@ -192,7 +231,7 @@ class EleccionView(View):
         """Valida y procesa la elección del jugador"""
         if interaction.user != self.jugador:
             await interaction.response.send_message(
-                "Este duelo no es para ti. Espera tu turno.",
+                "Este juego no es para ti. Espera tu turno.",
                 ephemeral=True
             )
             return
@@ -205,4 +244,4 @@ class EleccionView(View):
         self.stop()
 
 async def setup(bot):
-    await bot.add_cog(Reto(bot))
+    await bot.add_cog(JuegosPPT(bot))
