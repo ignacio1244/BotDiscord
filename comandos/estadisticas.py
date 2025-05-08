@@ -25,7 +25,8 @@ class EstadisticasManager:
             stats_default = {
                 "ppt": {"victorias": 0, "derrotas": 0},  
                 "reto": {"victorias": 0, "derrotas": 0},
-                "ruleta": {"ganancias": 0, "perdidas": 0, "apuestas_totales": 0}
+                "ruleta": {"ganancias": 0, "perdidas": 0, "apuestas_totales": 0},
+                "wordle": {"partidas_jugadas": 0, "partidas_ganadas": 0, "partidas_perdidas": 0,}
             }
             
             if str(usuario_id) in datos:
@@ -40,6 +41,8 @@ class EstadisticasManager:
                     del user_stats["reto"]["empates"]
                 if "ruleta" not in user_stats:
                     user_stats["ruleta"] = stats_default["ruleta"]
+                if "wordle" not in user_stats:
+                    user_stats["wordle"] = stats_default["wordle"]
                 return user_stats
             
             return stats_default
@@ -48,7 +51,8 @@ class EstadisticasManager:
             return {
                 "ppt": {"victorias": 0, "derrotas": 0},  
                 "reto": {"victorias": 0, "derrotas": 0},
-                "ruleta": {"ganancias": 0, "perdidas": 0, "apuestas_totales": 0}
+                "ruleta": {"ganancias": 0, "perdidas": 0, "apuestas_totales": 0},
+                "wordle": {"partidas_jugadas": 0, "partidas_ganadas": 0, "partidas_perdidas": 0}
             }
 
     def guardar_estadisticas(self, usuario_id, stats):
@@ -66,7 +70,7 @@ class EstadisticasManager:
     def actualizar_estadisticas_ppt(self, usuario_id, resultado):
         """
         Actualiza las estadísticas de piedra, papel o tijeras
-        resultado: 'victoria' o 'derrota' (no hay empates)
+        resultado: 'victoria', 'derrota' 
         """
         stats = self.obtener_estadisticas(usuario_id)
         
@@ -81,7 +85,7 @@ class EstadisticasManager:
     def actualizar_estadisticas_reto(self, usuario_id, resultado):
         """
         Actualiza las estadísticas del juego de reto
-        resultado: 'victoria' o 'derrota' (no hay empates)
+        resultado: 'victoria' o 'derrota'
         """
         stats = self.obtener_estadisticas(usuario_id)
         
@@ -202,7 +206,7 @@ class Estadisticas(commands.Cog):
         else:
             embed = discord.Embed(
                 title=f"📊 Estadísticas de {ctx.author.name}",
-                description="Usa `!stats ppt`, `!stats reto` o `!stats ruleta` para ver estadísticas específicas.",
+                description="Usa `!stats ppt`, `!stats reto`, `!stats ruleta` o `!wordle_stats` para ver estadísticas específicas.",
                 color=discord.Color.purple()
             )
             
@@ -215,6 +219,9 @@ class Estadisticas(commands.Cog):
             ruleta_stats = stats["ruleta"]
             balance_ruleta = ruleta_stats["ganancias"] - ruleta_stats["perdidas"]
             
+            wordle_stats = stats["wordle"]
+            total_wordle = wordle_stats["partidas_jugadas"]
+            
             embed.add_field(name="🎮 Piedra, Papel o Tijeras", 
                            value=f"Victorias: {ppt_stats['victorias']}\nDerrotas: {ppt_stats['derrotas']}\nTotal: {total_ppt}", 
                            inline=True)
@@ -226,6 +233,10 @@ class Estadisticas(commands.Cog):
             embed.add_field(name="🎰 Ruleta", 
                            value=f"Ganancias: {ruleta_stats['ganancias']}\nPérdidas: {ruleta_stats['perdidas']}\nBalance: {balance_ruleta}", 
                            inline=True)
+                
+            embed.add_field(name="🔠 Wordle", 
+                               value=f"Partidas: {total_wordle}\nVictorias: {wordle_stats['partidas_ganadas']}\nDerrotas: {wordle_stats['partidas_perdidas']}", 
+                               inline=True)
         
         await ctx.send(embed=embed)
 

@@ -1,10 +1,8 @@
 {
     "665668290605219885": {
-        "victorias": 3,
-        "derrotas": 2,
         "ppt": {
-            "victorias": 8,
-            "derrotas": 2
+            "victorias": 13,
+            "derrotas": 5
         },
         "ruleta": {
             "ganancias": 120,
@@ -13,7 +11,14 @@
         },
         "reto": {
             "victorias": 0,
-            "derrotas": 1
+            "derrotas": 0
+        },
+        "wordle": {
+            "partidas_jugadas": 0,
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "intentos_totales": 0,
+            "historial_intentos": []
         }
     },
     "853036678628638760": {
