@@ -27,6 +27,7 @@ class Wordle(commands.Cog):
             ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"],
             ["Z", "X", "C", "V", "B", "N", "M"]
         ]
+        self.ruta_estadisticas = os.path.join("utils", "estadisticas.json")
     
     def _cargar_palabras_base(self):
         """Carga la lista de palabras base para el juego"""
@@ -52,11 +53,110 @@ class Wordle(commands.Cog):
 
         return [palabra for palabra in palabras_base if len(palabra) == 5]
     
+    def _cargar_estadisticas(self):
+        """Carga las estadísticas de los usuarios desde el archivo JSON"""
+        try:
+            with open(self.ruta_estadisticas, 'r', encoding='utf-8') as archivo:
+                return json.load(archivo)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {}
+            
+    def _guardar_estadisticas(self, estadisticas):
+        """Guarda las estadísticas de los usuarios en el archivo JSON"""
+        with open(self.ruta_estadisticas, 'w', encoding='utf-8') as archivo:
+            json.dump(estadisticas, archivo, indent=4, ensure_ascii=False)
+            
+    def _actualizar_estadisticas(self, usuario_id, ganado, intentos):
+        """Actualiza las estadísticas del usuario"""
+        estadisticas = self._cargar_estadisticas()
+        
+        # Convertir ID a string para usarlo como clave en el JSON
+        usuario_id = str(usuario_id)
+        
+        # Inicializar estadísticas del usuario si no existen
+        if usuario_id not in estadisticas:
+            estadisticas[usuario_id] = {}
+            
+        # Inicializar estadísticas de wordle si no existen
+        if "wordle" not in estadisticas[usuario_id]:
+            estadisticas[usuario_id]["wordle"] = {
+                "partidas_jugadas": 0,
+                "partidas_ganadas": 0,
+                "partidas_perdidas": 0,
+                "intentos_totales": 0,
+                "historial_intentos": []
+            }
+            
+        # Actualizar estadísticas
+        estadisticas[usuario_id]["wordle"]["partidas_jugadas"] += 1
+        
+        if ganado:
+            estadisticas[usuario_id]["wordle"]["partidas_ganadas"] += 1
+            estadisticas[usuario_id]["wordle"]["intentos_totales"] += intentos
+            estadisticas[usuario_id]["wordle"]["historial_intentos"].append(intentos)
+        else:
+            estadisticas[usuario_id]["wordle"]["partidas_perdidas"] += 1
+            
+        # Guardar estadísticas actualizadas
+        self._guardar_estadisticas(estadisticas)
+        
+        return estadisticas[usuario_id]["wordle"]
        
     @commands.command(name="palabras_total")
     async def palabras_total(self, ctx):
         """Muestra el total de palabras disponibles para el juego"""
         await ctx.send(f"📊 Actualmente hay **{len(self.palabras)}** palabras disponibles para el juego Wordle.")
+        
+    @commands.command(name="wordle_stats", aliases=["wstats"])
+    async def wordle_stats(self, ctx, usuario: discord.Member = None):
+        """Muestra las estadísticas de Wordle de un usuario"""
+        if usuario is None:
+            usuario = ctx.author
+            
+        estadisticas = self._cargar_estadisticas()
+        usuario_id = str(usuario.id)
+        
+        if usuario_id not in estadisticas or "wordle" not in estadisticas[usuario_id]:
+            return await ctx.send(f"⚠️ {usuario.display_name} aún no tiene estadísticas de Wordle.")
+            
+        stats = estadisticas[usuario_id]["wordle"]
+        partidas_jugadas = stats["partidas_jugadas"]
+        partidas_ganadas = stats["partidas_ganadas"]
+        partidas_perdidas = stats["partidas_perdidas"]
+        
+        # Calcular porcentaje de victorias
+        porcentaje_victorias = (partidas_ganadas / partidas_jugadas * 100) if partidas_jugadas > 0 else 0
+        
+        # Calcular promedio de intentos
+        promedio_intentos = (stats["intentos_totales"] / partidas_ganadas) if partidas_ganadas > 0 else 0
+        
+        # Crear embed con estadísticas
+        embed = discord.Embed(
+            title=f"📊 Estadísticas de Wordle de {usuario.display_name}",
+            color=discord.Color.blue()
+        )
+        
+        embed.add_field(name="🎮 Partidas jugadas", value=str(partidas_jugadas), inline=True)
+        embed.add_field(name="🏆 Victorias", value=str(partidas_ganadas), inline=True)
+        embed.add_field(name="❌ Derrotas", value=str(partidas_perdidas), inline=True)
+        embed.add_field(name="📈 % de victorias", value=f"{porcentaje_victorias:.1f}%", inline=True)
+        embed.add_field(name="🔢 Promedio de intentos", value=f"{promedio_intentos:.1f}", inline=True)
+        
+        # Mostrar distribución de intentos si hay victorias
+        if partidas_ganadas > 0 and "historial_intentos" in stats:
+            distribucion = {}
+            for intento in stats["historial_intentos"]:
+                distribucion[intento] = distribucion.get(intento, 0) + 1
+                
+            distribucion_texto = ""
+            for i in range(1, 7):
+                cantidad = distribucion.get(i, 0)
+                barras = "█" * min(cantidad, 15)
+                distribucion_texto += f"{i}: {barras} {cantidad}\n"
+                
+            embed.add_field(name="📊 Distribución de intentos", value=distribucion_texto, inline=False)
+        
+        await ctx.send(embed=embed)
         
     @commands.command(name="wordle", aliases=["palabra"])
     async def wordle(self, ctx):
@@ -123,6 +223,9 @@ class Wordle(commands.Cog):
         palabra = self.juegos_activos[usuario_id]["palabra"]
         await ctx.send(f"😔 Te has rendido. La palabra era: **{palabra}**")
         
+        # Actualizar estadísticas (partida perdida)
+        self._actualizar_estadisticas(ctx.author.id, False, 0)
+        
         del self.juegos_activos[usuario_id]
         
     async def _jugar_wordle(self, ctx, usuario_id):
@@ -141,6 +244,8 @@ class Wordle(commands.Cog):
                 
                 if mensaje.content.lower() in ["!rendirse", "!surrender", "!abandonar"]:
                     await ctx.send(f"😔 Te has rendido. La palabra era: **{juego['palabra']}**")
+                    # Actualizar estadísticas (partida perdida)
+                    self._actualizar_estadisticas(ctx.author.id, False, 0)
                     del self.juegos_activos[usuario_id]
                     return
                 
@@ -194,6 +299,9 @@ class Wordle(commands.Cog):
                         for r in resultado:
                             resultado_visual += r
                         
+                        # Actualizar estadísticas (partida ganada)
+                        stats = self._actualizar_estadisticas(ctx.author.id, True, juego["intentos"])
+                        
                         embed_final = discord.Embed(
                             title="🎮 Wordle - ¡Juego Terminado!",
                             description=f"🎉 ¡Felicidades {ctx.author.mention}! Has adivinado la palabra.\n\n"
@@ -203,13 +311,34 @@ class Wordle(commands.Cog):
                             color=discord.Color.green()
                         )
                         
+                        # Añadir estadísticas al embed
+                        embed_final.add_field(
+                            name="📊 Tus estadísticas",
+                            value=f"🎮 Partidas: {stats['partidas_jugadas']}\n"
+                                 f"🏆 Victorias: {stats['partidas_ganadas']}\n"
+                                 f"📈 Promedio: {stats['intentos_totales']/stats['partidas_ganadas']:.1f} intentos",
+                            inline=False
+                        )
+                        
                         self.cooldowns[usuario_id] = datetime.now() + timedelta(hours=1)
                     else:
+                        # Actualizar estadísticas (partida perdida)
+                        stats = self._actualizar_estadisticas(ctx.author.id, False, 0)
+                        
                         embed_final = discord.Embed(
                             title="🎮 Wordle - ¡Juego Terminado!",
                             description=f"😔 Has agotado tus intentos.\n\n"
                                        f"La palabra era: **{juego['palabra']}**",
                             color=discord.Color.red()
+                        )
+                        
+                        # Añadir estadísticas al embed
+                        embed_final.add_field(
+                            name="📊 Tus estadísticas",
+                            value=f"🎮 Partidas: {stats['partidas_jugadas']}\n"
+                                 f"❌ Derrotas: {stats['partidas_perdidas']}\n"
+                                 f"🏆 Victorias: {stats['partidas_ganadas']}",
+                            inline=False
                         )
                         
                         self.cooldowns[usuario_id] = datetime.now() + timedelta(minutes=30)
@@ -223,6 +352,8 @@ class Wordle(commands.Cog):
                         
             except asyncio.TimeoutError:
                 await ctx.send(f"⏱️ Se agotó el tiempo. El juego ha terminado. La palabra era **{juego['palabra']}**.")
+                # Actualizar estadísticas (partida perdida)
+                self._actualizar_estadisticas(ctx.author.id, False, 0)
                 del self.juegos_activos[usuario_id]
                 return
 
