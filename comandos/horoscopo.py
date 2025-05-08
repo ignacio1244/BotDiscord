@@ -23,6 +23,24 @@ class Horoscopo(commands.Cog):
             f"¡Hoy es tu día, {signo}! De hecho, lo es para todos, porque el horóscopo no tiene ni idea de qué está pasando. ¡A seguir con la rutina!",
             f"Los planetas están alineados para que tengas un día... como cualquier otro. ¡Te lo dijo el horóscopo, {signo}!",
             f"El universo te está mirando, {signo}, y está pensando... '¿Realmente confías en un horóscopo?' Bueno, ¡es lo que hay!"
+            f"¡Atención {signo}! Las estrellas dicen que hoy es un buen día para... ¡espera! Las estrellas no hablan. Qué raro, ¿no?",
+            f"Según mi bola de cristal, {signo}, hoy tendrás la misma suerte que un paraguas en el desierto. ¡Totalmente inútil!",
+            f"¡Felicidades {signo}! Hoy es tu día de suerte... o no. En realidad, es solo otro día más en el calendario.",
+            f"Los astros me dicen que {signo} debería dejar de creer en los astros. ¿Irónico, verdad?",
+            f"¡{signo}! Hoy es el día perfecto para hacer algo productivo, como dejar de leer horóscopos.",
+            f"Mercurio retrógrado afectará a {signo} hoy... igual que afecta a todos: ¡absolutamente nada!",
+            f"Las cartas astrales revelan que {signo} gastará su tiempo leyendo tonterías como esta. ¡Qué precisión!",
+            f"¡Alerta cósmica para {signo}! Hoy podrías encontrarte con alguien... o no. Las probabilidades son 50/50.",
+            f"El cosmos ha hablado, {signo}: deberías invertir en un buen libro de ciencia en lugar de creer en estas cosas.",
+            f"¡{signo}! Tu planeta regente dice que deberías tomar decisiones basadas en la lógica, no en un bot de Discord.",
+            f"Hoy {signo} tendrá un día tan especial como todos los otros 7 mil millones de habitantes del planeta. ¡Qué coincidencia!",
+            f"Las constelaciones sugieren que {signo} debería considerar que las constelaciones son solo estrellas muy lejanas sin ninguna influencia en su vida.",
+            f"¡Buenas noticias, {signo}! Tu futuro está determinado por tus decisiones, no por un montón de planetas girando por ahí.",
+            f"Según la posición de Júpiter, {signo} debería recordar que Júpiter está a unos 588 millones de kilómetros y le importa un comino tu vida.",
+            f"¡{signo}! Tu número de la suerte es... ¡espera! Los números no tienen poderes mágicos. Qué decepción, ¿verdad?",
+            f"La Luna está en la séptima casa, lo que significa que {signo} debería considerar mudarse a una octava casa. O no. Da igual.",
+            f"¡Predicción exclusiva para {signo}! Hoy respirarás aproximadamente 20,000 veces. Impresionante, ¿no?",
+
         ]
         await ctx.send(random.choice(respuestas))
 
