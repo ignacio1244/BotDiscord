@@ -5,3 +5,4 @@ __pycache__/
 *.db
 Token.env
 botpy/
+*.log
