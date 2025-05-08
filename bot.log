@@ -606,3 +606,159 @@ Traceback (most recent call last):
 AttributeError: '_MissingSentinel' object has no attribute 'create_task'
 2025-05-05 23:44:28,080 | INFO | logging in using static token
 2025-05-05 23:44:29,487 | INFO | Shard ID None has connected to Gateway (Session ID: 623aafe13660f107c0e5c769e32566b0).
+2025-05-08 14:32:59,215 | INFO | logging in using static token
+2025-05-08 14:33:00,750 | INFO | Shard ID None has connected to Gateway (Session ID: fa327dd359325db7d7229c94e60d2228).
+2025-05-08 14:33:16,598 | ERROR | Ignoring exception in command batallanavaljugar
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 103, in batalla_naval_jugar
+    await game.start_game(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 218, in start_game
+    view = BatallaNavalView(self)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 66, in __init__
+    self.add_item(BatallaNavalButton(x, y, game, is_player_board=False))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ui\view.py", line 326, in add_item
+    self.__weights.add_item(item)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ui\view.py", line 112, in add_item
+    raise ValueError(f'item would not fit at row {item.row} ({total} > 5 width)')
+ValueError: item would not fit at row 0 (6 > 5 width)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: item would not fit at row 0 (6 > 5 width)
+2025-05-08 14:40:15,722 | INFO | logging in using static token
+2025-05-08 14:40:16,926 | INFO | Shard ID None has connected to Gateway (Session ID: 149449ab6f1ca20592c2c2360d47c9ea).
+2025-05-08 14:40:35,048 | ERROR | Ignoring exception in command batallanavaljugar
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 106, in batalla_naval_jugar
+    await game.start_game(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 221, in start_game
+    view = BatallaNavalView(self)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 69, in __init__
+    self.add_item(BatallaNavalButton(x, y, game, is_player_board=False))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ui\view.py", line 326, in add_item
+    self.__weights.add_item(item)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ui\view.py", line 112, in add_item
+    raise ValueError(f'item would not fit at row {item.row} ({total} > 5 width)')
+ValueError: item would not fit at row 0 (6 > 5 width)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: item would not fit at row 0 (6 > 5 width)
+2025-05-08 15:04:53,893 | INFO | logging in using static token
+2025-05-08 15:04:55,398 | INFO | Shard ID None has connected to Gateway (Session ID: c3dabe5047220015d2eec7956c2f1dfc).
+2025-05-08 15:05:00,881 | ERROR | Ignoring exception in command batallanavaljugar
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 108, in batalla_naval_jugar
+    await game.start_game(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 223, in start_game
+    view = BatallaNavalView(self)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 71, in __init__
+    self.add_item(BatallaNavalButton(x, y, game, is_player_board=False))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\batalla_naval.py", line 14, in __init__
+    super().__init__(style=ButtonStyle.secondary, label="\u200b", row=y + row_offset)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ui\button.py", line 130, in __init__
+    self.row = row
+    ^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ui\item.py", line 112, in row
+    raise ValueError('row cannot be negative or greater than or equal to 5')
+ValueError: row cannot be negative or greater than or equal to 5
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: row cannot be negative or greater than or equal to 5
+2025-05-08 15:17:01,352 | INFO | logging in using static token
+2025-05-08 15:17:02,556 | INFO | Shard ID None has connected to Gateway (Session ID: b0305075d2cf4e6e8120d1459fe1862a).
+2025-05-08 15:40:41,131 | INFO | Rendimiento: RAM: 46.08 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 15:40:41,140 | INFO | logging in using static token
+2025-05-08 15:40:42,335 | INFO | Shard ID None has connected to Gateway (Session ID: 116b11aa27607686531cf01007522e0d).
+2025-05-08 15:45:44,512 | INFO | Rendimiento: RAM: 49.25 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-08 15:50:44,637 | INFO | Rendimiento: RAM: 49.30 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-08 15:55:44,741 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-08 16:00:44,878 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-08 16:05:45,008 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.42 horas
+2025-05-08 16:10:45,128 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.50 horas
+2025-05-08 16:15:45,249 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.58 horas
+2025-05-08 16:20:45,407 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.67 horas
+2025-05-08 16:25:45,507 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.75 horas
+2025-05-08 16:30:45,647 | INFO | Rendimiento: RAM: 47.70 MB | CPU: 0.0% | Uptime: 0.83 horas
+2025-05-08 16:33:07,019 | INFO | Rendimiento: RAM: 47.71 MB | CPU: 0.0% | Uptime: 0.87 horas
+2025-05-08 16:33:17,059 | INFO | Rendimiento: RAM: 46.92 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 16:33:17,090 | INFO | logging in using static token
+2025-05-08 16:33:18,199 | INFO | Shard ID None has connected to Gateway (Session ID: 0b03f88b972548f143916d2e20af6c41).
+2025-05-08 16:38:19,415 | INFO | Rendimiento: RAM: 49.24 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-08 16:38:25,564 | INFO | Rendimiento: RAM: 45.92 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 16:38:25,847 | INFO | logging in using static token
+2025-05-08 16:38:26,978 | INFO | Shard ID None has connected to Gateway (Session ID: d336413a87b2cd77c77dd9f5ffdaa978).
+2025-05-08 16:41:53,286 | INFO | Rendimiento: RAM: 45.73 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 16:41:53,321 | INFO | logging in using static token
+2025-05-08 16:41:54,635 | INFO | Shard ID None has connected to Gateway (Session ID: b1363edf0a5d637580ba8a674f776733).
+2025-05-08 16:46:56,776 | INFO | Rendimiento: RAM: 48.69 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-08 16:51:56,946 | INFO | Rendimiento: RAM: 48.75 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-08 16:56:57,092 | INFO | Rendimiento: RAM: 48.72 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-08 17:01:57,226 | INFO | Rendimiento: RAM: 48.72 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-08 17:06:57,370 | INFO | Rendimiento: RAM: 48.72 MB | CPU: 0.0% | Uptime: 0.42 horas
+2025-05-08 17:11:57,505 | INFO | Rendimiento: RAM: 48.72 MB | CPU: 0.0% | Uptime: 0.50 horas
+2025-05-08 17:14:34,748 | INFO | Rendimiento: RAM: 48.74 MB | CPU: 0.0% | Uptime: 0.54 horas
+2025-05-08 17:14:41,347 | INFO | Rendimiento: RAM: 47.09 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 17:14:41,596 | INFO | logging in using static token
+2025-05-08 17:14:42,788 | INFO | Shard ID None has connected to Gateway (Session ID: 173d8424dac39490a952a65dd1349a80).
+2025-05-08 17:16:16,837 | INFO | Rendimiento: RAM: 49.13 MB | CPU: 0.0% | Uptime: 0.03 horas
+2025-05-08 17:16:27,143 | INFO | Rendimiento: RAM: 45.95 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 17:16:27,167 | INFO | logging in using static token
+2025-05-08 17:16:28,417 | INFO | Shard ID None has connected to Gateway (Session ID: 9bfd2f109ac119ef46606b4918995dff).
+2025-05-08 17:19:42,839 | INFO | Rendimiento: RAM: 48.89 MB | CPU: 0.0% | Uptime: 0.05 horas
+2025-05-08 17:19:49,452 | INFO | Rendimiento: RAM: 45.85 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 17:19:49,539 | INFO | logging in using static token
+2025-05-08 17:19:50,839 | INFO | Shard ID None has connected to Gateway (Session ID: 718a1f95e3c292acaeff9d54ff70f490).
+2025-05-08 17:20:30,969 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "stats_wordle" is not found
+2025-05-08 17:22:15,372 | INFO | Rendimiento: RAM: 48.83 MB | CPU: 0.0% | Uptime: 0.04 horas
+2025-05-08 17:22:18,606 | INFO | Rendimiento: RAM: 45.85 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 17:22:18,629 | INFO | logging in using static token
+2025-05-08 17:22:19,873 | INFO | Shard ID None has connected to Gateway (Session ID: 730e2bc4e1c4e9be7ad769a30de0f4f3).
+2025-05-08 17:27:22,014 | INFO | Rendimiento: RAM: 47.48 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-08 17:32:22,165 | INFO | Rendimiento: RAM: 47.49 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-08 17:37:18,528 | INFO | Rendimiento: RAM: 47.48 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-08 17:37:38,197 | INFO | Rendimiento: RAM: 46.65 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 17:37:38,255 | INFO | logging in using static token
+2025-05-08 17:37:39,630 | INFO | Shard ID None has connected to Gateway (Session ID: 4c976f7afbd53d89cd08b8d494bc6a38).
+2025-05-08 17:42:41,830 | INFO | Rendimiento: RAM: 49.06 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-08 17:47:42,004 | INFO | Rendimiento: RAM: 49.07 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-08 17:52:42,165 | INFO | Rendimiento: RAM: 49.04 MB | CPU: 0.0% | Uptime: 0.25 horas
