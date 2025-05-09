@@ -67,28 +67,27 @@ DISCORD_TOKEN=tu_token_aqui
 ## 💡 Estructura del proyecto 
 
 ```
-📁 discord/
+📁 repo/
 │
-├── bot.py               # Archivo principal
-├── GLaDOS.py            # Mensajes automáticos y personalidad
-├── comandos/            # Módulos de comandos
-│   ├── ayuda.py         # Comando de ayuda
-│   ├── billetera.py     # Cotización del dólar en ARG y precio de la criptomonedas
-│   ├── casino.py        # Juego de ruleta
-│   ├── clima.py         # Consulta del clima
-│   ├── economia.py      # Sistema económico
-│   ├── encuesta.py      # Creación de encuestas
-│   ├── estadisticas.py  # Estadísticas de juegos
-│   ├── horoscopo.py     # Consulta de horóscopo
-│   ├── moderacion.py    # Comandos de moderación
-│   ├── ppyt.py          # Piedra, papel o tijeras
-│   ├── recomendador.py  # Recomendaciones de películas y series
-│   ├── reto.py          # Duelos entre usuarios
-│   └──wordle.py         # Juego de Wordle
-├── utils/               # Utilidades y datos
+├── bot.py                # Archivo principal
+├── GLaDOS.py             # Mensajes automáticos y personalidad
+├── comandos/             # Módulos de comandos
+│   ├── ayuda.py          # Comando de ayuda
+│   ├── billetera.py      # Cotización del dólar en ARG y precio de la criptomonedas
+│   ├── casino.py         # Juego de ruleta
+│   ├── clima.py          # Consulta del clima
+│   ├── economia.py       # Sistema económico
+│   ├── encuesta.py       # Creación de encuestas
+│   ├── estadisticas.py   # Estadísticas de juegos
+│   ├── horoscopo.py      # Consulta de horóscopo
+│   ├── moderacion.py     # Comandos de moderación
+│   ├── juegos_ppt.py     # Piedra, papel o tijeras
+│   ├── recomendador.py   # Recomendaciones de películas y series
+│   └──wordle.py          # Juego de Wordle
+├── utils/                # Utilidades y datos
 │   ├── estadisticas.json # Datos de estadísticas
-│   └── saldos.json      # Datos de economía
-├── requirements.txt     # Dependencias
-└── Token.env            # Variables de entorno
+│   └── saldos.json       # Datos de economía
+├── requirements.txt      # Dependencias
+└── Token.env             # Variables de entorno
 
 ```
