@@ -83,7 +83,7 @@ DISCORD_TOKEN=tu_token_aqui
 │   ├── moderacion.py     # Comandos de moderación
 │   ├── juegos_ppt.py     # Piedra, papel o tijeras
 │   ├── recomendador.py   # Recomendaciones de películas y series
-│   └──wordle.py          # Juego de Wordle
+│   └── wordle.py         # Juego de Wordle
 ├── utils/                # Utilidades y datos
 │   ├── estadisticas.json # Datos de estadísticas
 │   └── saldos.json       # Datos de economía
