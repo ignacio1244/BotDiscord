@@ -21,10 +21,19 @@ from comandos.economia import Economia
 from comandos.encuesta import Encuesta
 from comandos.horoscopo import Horoscopo
 from comandos.billetera import Billetera
+from comandos.casino import Ruleta, Dados
 from comandos.juegos_ppt import JuegosPPT
 from comandos.moderacion import Moderacion
 from comandos.estadisticas import Estadisticas
+from comandos.ahorcado import Ahorcado
 from comandos.recomendador import Recomendador
+from comandos.musica import Musica
+
+#-------------------NO OLVIDAR ACTIVAR-------------------------
+
+#                  botpy\Scripts\activate
+
+
 
 
 class PerformanceMonitor:
@@ -62,9 +71,7 @@ class PerformanceMonitor:
 
 performance_monitor = PerformanceMonitor()
 
-#-------------------NO OLVIDAR ACTIVAR-------------------------
 
-#                  botpy\Scripts\activate
 
 #-------------------configuración del bot-----------------------
 
@@ -146,42 +153,6 @@ async def update_bot_status():
         status=discord.Status.online
     )
 
-#-------------------Funciones de caché-----------------------
-@lru_cache(maxsize=100)
-def get_guild_data(guild_id):
-    """Obtiene datos de un servidor con caché"""
-    return {"id": guild_id, "cached": True}
-
-@lru_cache(maxsize=1000)
-def get_user_data(user_id):
-    """Obtiene datos de un usuario con caché"""
-    return {"id": user_id, "cached": True}
-
-async def fetch_url(url, headers=None, params=None):
-    """Realiza una petición HTTP usando aiohttp"""
-    if url in cache:
-        if time.time() - cache[url]["timestamp"] < 1800:
-            return cache[url]["data"]
-    
-    if not session or session.closed:
-        return None
-    
-    try:
-        async with session.get(url, headers=headers, params=params) as response:
-            if response.status == 200:
-                data = await response.json()
-                # Guardar en caché
-                cache[url] = {
-                    "data": data,
-                    "timestamp": time.time()
-                }
-                return data
-            else:
-                logging.warning(f"Error en petición HTTP: {response.status} - {url}")
-                return None
-    except Exception as e:
-        logging.error(f"Error al hacer petición HTTP: {str(e)}")
-        return None
 
 #-------------------Carga de módulos-----------------------
 async def load_cogs():
@@ -190,7 +161,10 @@ async def load_cogs():
         ('comandos.ayuda', Ayuda),
         ('comandos.clima', Clima),
         ('comandos.casino', Ruleta),
+        ('comandos.casino', Dados),
         ('comandos.wordle', Wordle),
+        ('comandos.musica', Musica),
+        ('comandos.ahorcado', Ahorcado),
         ('comandos.encuesta', Encuesta),
         ('comandos.economia', Economia),
         ('comandos.billetera', Billetera),
@@ -250,6 +224,43 @@ async def load_cog(cog_name, cog_class):
         return True
     except Exception as e:
         return e
+
+#-------------------Funciones de caché-----------------------
+@lru_cache(maxsize=100)
+def get_guild_data(guild_id):
+    """Obtiene datos de un servidor con caché"""
+    return {"id": guild_id, "cached": True}
+
+@lru_cache(maxsize=1000)
+def get_user_data(user_id):
+    """Obtiene datos de un usuario con caché"""
+    return {"id": user_id, "cached": True}
+
+async def fetch_url(url, headers=None, params=None):
+    """Realiza una petición HTTP usando aiohttp"""
+    if url in cache:
+        if time.time() - cache[url]["timestamp"] < 1800:
+            return cache[url]["data"]
+    
+    if not session or session.closed:
+        return None
+    
+    try:
+        async with session.get(url, headers=headers, params=params) as response:
+            if response.status == 200:
+                data = await response.json()
+                # Guardar en caché
+                cache[url] = {
+                    "data": data,
+                    "timestamp": time.time()
+                }
+                return data
+            else:
+                logging.warning(f"Error en petición HTTP: {response.status} - {url}")
+                return None
+    except Exception as e:
+        logging.error(f"Error al hacer petición HTTP: {str(e)}")
+        return None
 
 #-------------------Función principal-----------------------
 async def main():

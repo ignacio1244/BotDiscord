@@ -74,29 +74,31 @@ class Encuesta(commands.Cog):
     async def mostrar_ayuda(self, ctx):
         """Muestra mensaje de ayuda con formato embed"""
         embed = discord.Embed(
-            title="❓ Uso correcto del comando !encuesta",
-            color=discord.Color.orange()
+            title="📊 Ayuda: Comando Encuesta",
+            description="Crea una encuesta interactiva con múltiples opciones para que los usuarios voten.",
+            color=discord.Color.purple()
         )
         
         embed.add_field(
-            name="Formato",
+            name="📝 Formato",
             value="`!encuesta pregunta | opción1 | opción2 [| opción3 ...]`",
             inline=False
         )
         
         embed.add_field(
-            name="Ejemplo",
-            value="`!encuesta ¿Mejor comida? | Pizza | Hamburguesa | Sushi`",
+            name="✨ Ejemplos",
+            value="```!encuesta ¿Cuál es tu juego favorito? | Minecraft | Fortnite | Among Us```\n"
+                  "```!encuesta ¿Qué deberíamos hacer hoy? | Jugar | Ver una película | Charlar```",
             inline=False
         )
         
         embed.add_field(
-            name="Requisitos",
-            value=f"- Mínimo {MIN_OPCIONES} opciones\n- Máximo {MAX_OPCIONES} opciones",
+            name="⚙️ Requisitos",
+            value=f"• Mínimo {MIN_OPCIONES} opciones\n• Máximo {MAX_OPCIONES} opciones\n• Separar elementos con el símbolo `|`",
             inline=False
         )
         
-        embed.set_footer(text="Separa cada elemento con el carácter |")
+        embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.display_avatar.url)
         
         await ctx.send(embed=embed)
 

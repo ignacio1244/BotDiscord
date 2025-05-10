@@ -36,34 +36,84 @@ class Ayuda(commands.Cog):
             'juegos': '🎮 Juegos',
             'economia': '💰 Economía',
             'utilidades': '🌍 Utilidades',
-            'moderacion': '🛠️ Moderación',
+            'moderacion': '🛠️ Moderacion',
             'glados': '🤖 GLaDOS'
         }
 
     @commands.command(name="ayuda", aliases=["comandos"])
-    async def mostrar_ayuda(self, ctx, categoria: str = None):
+    async def mostrar_ayuda(self, ctx, categoria_o_comando: str = None):
         """Muestra todos los comandos o los de una categoría específica"""
-        if categoria:
-            await self.mostrar_categoria(ctx, categoria.lower())
-        else:
+        if not categoria_o_comando:
             await self.mostrar_menu_principal(ctx)
+            return
+            
+        # Verificar si es un comando específico
+        comando = self.bot.get_command(categoria_o_comando)
+        if comando:
+            await self.mostrar_ayuda_comando(ctx, comando)
+            return
+            
+        # Si no es un comando, tratar como categoría
+        await self.mostrar_categoria(ctx, categoria_o_comando.lower())
+        
+    async def mostrar_ayuda_comando(self, ctx, comando):
+        """Muestra ayuda detallada para un comando específico"""
+        embed = discord.Embed(
+            title=f"📚 Ayuda: !{comando.name}",
+            description=comando.help or "No hay descripción disponible.",
+            color=discord.Color.purple()
+        )
+        
+        # Mostrar aliases si existen
+        if comando.aliases:
+            embed.add_field(
+                name="🔄 Aliases",
+                value=", ".join([f"`!{alias}`" for alias in comando.aliases]),
+                inline=False
+            )
+        
+        # Mostrar uso si está disponible
+        if hasattr(comando, 'usage') and comando.usage:
+            embed.add_field(
+                name="📝 Uso",
+                value=f"`!{comando.name} {comando.usage}`",
+                inline=False
+            )
+        else:
+            embed.add_field(
+                name="📝 Uso",
+                value=f"`!{comando.name}`",
+                inline=False
+            )
+            
+        embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.display_avatar.url)
+        
+        await ctx.send(embed=embed)
 
     async def mostrar_menu_principal(self, ctx):
         """Muestra el menú principal de categorías"""
         embed = discord.Embed(
-            title="🆘 Centro de Ayuda",
-            description="Usa `!ayuda [categoría]` para ver comandos específicos\nEjemplo: `!ayuda juegos`",
-            color=discord.Color.blue()
+            title="🤖 Centro de Ayuda de GLaDOS",
+            description="Bienvenido al centro de ayuda. Selecciona una categoría para ver los comandos disponibles.\n\n"
+                       "**Uso:** `!ayuda [categoría]`\n"
+                       "**Ejemplo:** `!ayuda juegos`",
+            color=discord.Color.purple()
         )
 
         for nombre_categoria in self.categorias.keys():
             nombre_corto = nombre_categoria.split()[1].lower()
+            comandos = self.categorias[nombre_categoria]
+            ejemplos = ", ".join([f"`!{cmd[0].split()[1]}`" for cmd in comandos[:2]])
+            
             embed.add_field(
                 name=nombre_categoria,
-                value=f"`{nombre_corto}` - {len(self.categorias[nombre_categoria])} comandos",
+                value=f"**{len(comandos)} comandos** • Ejemplo: {ejemplos}\n"
+                     f"Ver todos: `!ayuda {nombre_corto}`",
                 inline=False
             )
 
+        embed.set_footer(text="Tip: Usa !ayuda [comando] para ver información detallada de un comando específico")
+        
         await ctx.send(embed=embed)
 
     async def mostrar_categoria(self, ctx, categoria_input: str):

@@ -125,8 +125,7 @@ class Recomendador(commands.Cog):
             # Determinar endpoint según tipo
             endpoint = "movie" if tipo == "película" else "tv"
             
-            # Construir URL con filtro de valoración mínima de 6
-            url = f"{self.base_url}/discover/{endpoint}?api_key={self.api_key}&with_genres={self.generos[genero]}&language=es-ES&sort_by=popularity.desc&vote_average.gte=6"
+            url = f"{self.base_url}/discover/{endpoint}?api_key={self.api_key}&with_genres={self.generos[genero]}&language=es-ES&sort_by=popularity.desc&vote_average.gte=7.5"
             
             async with aiohttp.ClientSession() as session:
                 async with session.get(url) as response:
@@ -142,10 +141,10 @@ class Recomendador(commands.Cog):
                     max_index = min(10, len(data["results"]))
                     recomendacion = random.choice(data["results"][:max_index])
                     
-                    # Verificar que la valoración sea mayor a 6
-                    if recomendacion.get('vote_average', 0) < 6:
-                        # Buscar una alternativa con valoración mayor a 6
-                        alternativas = [r for r in data["results"] if r.get('vote_average', 0) >= 6]
+                    # Verificar que la valoración sea mayor a 7.5
+                    if recomendacion.get('vote_average', 0) < 7.5:
+                        # Buscar una alternativa con valoración mayor a 7.5
+                        alternativas = [r for r in data["results"] if r.get('vote_average', 0) >= 7.5]
                         if alternativas:
                             recomendacion = random.choice(alternativas)
                     

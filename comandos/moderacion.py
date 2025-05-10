@@ -40,7 +40,7 @@ class Moderacion(commands.Cog):
 
 
 
-    @commands.command(name="limpiar", aliases=["clean"])
+    @commands.command(name="limpiar_chat", aliases=["purgar"])
     async def limpiar(self, ctx, usuario: discord.Member, cantidad: int = 5):
         """Borra una cantidad específica de mensajes de un usuario"""
         if cantidad < 1 or cantidad > 100:
