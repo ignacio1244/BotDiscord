@@ -762,3 +762,1302 @@ discord.ext.commands.errors.CommandNotFound: Command "stats_wordle" is not found
 2025-05-08 17:42:41,830 | INFO | Rendimiento: RAM: 49.06 MB | CPU: 0.0% | Uptime: 0.08 horas
 2025-05-08 17:47:42,004 | INFO | Rendimiento: RAM: 49.07 MB | CPU: 0.0% | Uptime: 0.17 horas
 2025-05-08 17:52:42,165 | INFO | Rendimiento: RAM: 49.04 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-08 19:33:53,789 | INFO | Rendimiento: RAM: 47.72 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 19:33:53,916 | INFO | logging in using static token
+2025-05-08 19:33:55,017 | INFO | Shard ID None has connected to Gateway (Session ID: 1dde03abfc372906d0f1289927565b9d).
+2025-05-08 19:33:58,565 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "hola" is not found
+2025-05-08 19:38:38,937 | INFO | Rendimiento: RAM: 45.80 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 19:38:38,946 | INFO | logging in using static token
+2025-05-08 19:38:40,144 | INFO | Shard ID None has connected to Gateway (Session ID: 1120ee776d220450472ef859e796c891).
+2025-05-08 19:39:32,584 | INFO | Rendimiento: RAM: 45.63 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 19:39:32,599 | INFO | logging in using static token
+2025-05-08 19:39:34,803 | INFO | Shard ID None has connected to Gateway (Session ID: 0b050d1add1ee16a4c84584039c80d4b).
+2025-05-08 20:01:16,630 | INFO | Rendimiento: RAM: 46.22 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 20:01:16,649 | INFO | logging in using static token
+2025-05-08 20:01:18,086 | INFO | Shard ID None has connected to Gateway (Session ID: 5230528a2a88f226f2154eb2a62f2e43).
+2025-05-08 20:02:13,625 | ERROR | Ignoring exception in command encuesta
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\encuesta.py", line 32, in crear_encuesta
+    embed = self.crear_embed_encuesta(ctx, pregunta, opciones)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\encuesta.py", line 43, in crear_embed_encuesta
+    timestamp=datetime.now(datetime.timezone.utc)
+                           ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timezone'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: type object 'datetime.datetime' has no attribute 'timezone'
+2025-05-08 20:05:04,845 | INFO | Rendimiento: RAM: 48.90 MB | CPU: 0.0% | Uptime: 0.06 horas
+2025-05-08 20:05:14,520 | INFO | Rendimiento: RAM: 46.15 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-08 20:05:14,600 | INFO | logging in using static token
+2025-05-08 20:05:16,263 | INFO | Shard ID None has connected to Gateway (Session ID: 4df50e90214abe299088ab61da9cce09).
+2025-05-09 01:44:50,619 | INFO | Rendimiento: RAM: 45.92 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 01:44:50,631 | INFO | logging in using static token
+2025-05-09 01:44:51,821 | INFO | Shard ID None has connected to Gateway (Session ID: f51dd0da5522e5e3c13dd81bff5c99bc).
+2025-05-09 01:49:54,001 | INFO | Rendimiento: RAM: 49.51 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 01:54:54,128 | INFO | Rendimiento: RAM: 49.52 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 01:59:54,249 | INFO | Rendimiento: RAM: 48.74 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 02:02:26,857 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "regargar" is not found
+2025-05-09 02:04:54,370 | INFO | Rendimiento: RAM: 49.18 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-09 02:09:54,510 | INFO | Rendimiento: RAM: 49.21 MB | CPU: 0.0% | Uptime: 0.42 horas
+2025-05-09 02:14:54,656 | INFO | Rendimiento: RAM: 49.66 MB | CPU: 0.0% | Uptime: 0.50 horas
+2025-05-09 02:19:54,799 | INFO | Rendimiento: RAM: 49.66 MB | CPU: 0.0% | Uptime: 0.58 horas
+2025-05-09 02:24:54,927 | INFO | Rendimiento: RAM: 49.96 MB | CPU: 0.0% | Uptime: 0.67 horas
+2025-05-09 02:26:41,262 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "timba_stats" is not found
+2025-05-09 02:27:04,197 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "stats_ruleta" is not found
+2025-05-09 02:29:55,083 | INFO | Rendimiento: RAM: 49.96 MB | CPU: 0.0% | Uptime: 0.75 horas
+2025-05-09 02:29:59,199 | INFO | Rendimiento: RAM: 49.98 MB | CPU: 0.0% | Uptime: 0.75 horas
+2025-05-09 02:30:19,826 | INFO | Rendimiento: RAM: 45.91 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 02:30:19,837 | INFO | logging in using static token
+2025-05-09 02:30:20,927 | INFO | Shard ID None has connected to Gateway (Session ID: 1895944c4a0db40886c2e6209cd3c4b6).
+2025-05-09 02:32:03,011 | INFO | Rendimiento: RAM: 48.96 MB | CPU: 0.0% | Uptime: 0.03 horas
+2025-05-09 02:32:07,096 | INFO | Rendimiento: RAM: 45.77 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 02:32:07,112 | INFO | logging in using static token
+2025-05-09 02:32:08,460 | INFO | Shard ID None has connected to Gateway (Session ID: ad9b193b08623f029cf5100831ca6314).
+2025-05-09 02:37:10,600 | INFO | Rendimiento: RAM: 49.17 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 02:39:42,223 | INFO | Rendimiento: RAM: 49.20 MB | CPU: 0.0% | Uptime: 0.13 horas
+2025-05-09 02:39:46,008 | INFO | Rendimiento: RAM: 45.82 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 02:39:46,021 | INFO | logging in using static token
+2025-05-09 02:39:47,170 | INFO | Shard ID None has connected to Gateway (Session ID: db867d11e2c6f9a77a0c1809f04e2b8d).
+2025-05-09 02:42:31,391 | INFO | Rendimiento: RAM: 47.58 MB | CPU: 0.0% | Uptime: 0.05 horas
+2025-05-09 02:54:34,328 | INFO | Rendimiento: RAM: 45.82 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 02:54:34,336 | INFO | logging in using static token
+2025-05-09 02:54:35,579 | INFO | Shard ID None has connected to Gateway (Session ID: 2966877f0aaf7aee0ca8c578fcd1c396).
+2025-05-09 02:59:37,771 | INFO | Rendimiento: RAM: 49.28 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 03:04:37,981 | INFO | Rendimiento: RAM: 49.29 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 03:09:38,205 | INFO | Rendimiento: RAM: 49.26 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 03:13:55,064 | ERROR | Ignoring exception in command recomendar
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 926, in prepare
+    raise CheckFailure(f'The check functions for command {self.qualified_name} failed.')
+discord.ext.commands.errors.CheckFailure: The check functions for command recomendar failed.
+2025-05-09 03:14:38,385 | INFO | Rendimiento: RAM: 49.77 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-09 03:16:48,624 | INFO | Rendimiento: RAM: 49.06 MB | CPU: 0.0% | Uptime: 0.37 horas
+2025-05-09 03:16:56,296 | INFO | Rendimiento: RAM: 46.37 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 03:16:56,307 | INFO | logging in using static token
+2025-05-09 03:16:58,870 | INFO | Shard ID None has connected to Gateway (Session ID: 0bedd5dfaf0ff7f6967bfca48b0c52f5).
+2025-05-09 03:22:01,142 | INFO | Rendimiento: RAM: 48.55 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 03:27:01,563 | INFO | Rendimiento: RAM: 48.85 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 03:32:01,731 | INFO | Rendimiento: RAM: 48.89 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 03:35:53,577 | ERROR | Ignoring exception in command wordle
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\wordle.py", line 213, in wordle
+    await self._jugar_wordle(ctx, usuario_id)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\wordle.py", line 303, in _jugar_wordle
+    stats = self._actualizar_estadisticas(ctx.author.id, True, juego["intentos"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\wordle.py", line 95, in _actualizar_estadisticas
+    estadisticas[usuario_id]["wordle"]["intentos_totales"] += intentos
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'intentos_totales'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 'intentos_totales'
+2025-05-09 03:37:01,888 | INFO | Rendimiento: RAM: 49.48 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-09 03:41:10,460 | INFO | Rendimiento: RAM: 49.54 MB | CPU: 0.0% | Uptime: 0.40 horas
+2025-05-09 03:41:22,495 | INFO | Rendimiento: RAM: 46.66 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 03:41:22,694 | INFO | logging in using static token
+2025-05-09 03:41:24,902 | INFO | Shard ID None has connected to Gateway (Session ID: f1515987aa1a7baf1e839336a42b9570).
+2025-05-09 03:41:39,403 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "dado" is not found
+2025-05-09 03:42:12,692 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "dado" is not found
+2025-05-09 03:43:20,847 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "dado" is not found
+2025-05-09 03:44:03,520 | INFO | Rendimiento: RAM: 48.93 MB | CPU: 0.0% | Uptime: 0.04 horas
+2025-05-09 03:45:36,517 | INFO | Rendimiento: RAM: 46.16 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 03:45:36,561 | INFO | logging in using static token
+2025-05-09 03:45:38,353 | INFO | Shard ID None has connected to Gateway (Session ID: 335f24ebf460b4c6cadaaab9d769cc01).
+2025-05-09 03:49:46,026 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\converter.py", line 1246, in _actual_conversion
+    return converter(argument)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '<@697987561058205768>'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 715, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\converter.py", line 1355, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\converter.py", line 1255, in _actual_conversion
+    raise BadArgument(f'Converting to "{name}" failed for parameter "{param.name}".') from exc
+discord.ext.commands.errors.BadArgument: Converting to "int" failed for parameter "valor_apuesta".
+2025-05-09 03:50:40,547 | INFO | Rendimiento: RAM: 50.30 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 03:55:40,648 | INFO | Rendimiento: RAM: 50.32 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 03:56:17,050 | INFO | Rendimiento: RAM: 48.54 MB | CPU: 0.0% | Uptime: 0.18 horas
+2025-05-09 04:03:22,184 | INFO | Rendimiento: RAM: 65.49 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 04:03:22,221 | INFO | logging in using static token
+2025-05-09 04:03:23,321 | INFO | Shard ID None has connected to Gateway (Session ID: c8f0f9cf5a0fc3c77f26936acc805498).
+2025-05-09 04:06:12,665 | INFO | Rendimiento: RAM: 68.01 MB | CPU: 0.0% | Uptime: 0.05 horas
+2025-05-09 04:06:22,353 | INFO | Rendimiento: RAM: 65.35 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 04:06:22,400 | INFO | logging in using static token
+2025-05-09 04:06:24,040 | INFO | Shard ID None has connected to Gateway (Session ID: f320aa21c0d88059b3a626f55e2aef40).
+2025-05-09 04:06:58,592 | INFO | Connecting to voice...
+2025-05-09 04:06:58,592 | INFO | Starting voice handshake... (connection attempt 1)
+2025-05-09 04:06:58,896 | INFO | Voice handshake complete. Endpoint found buenos-aires4148.discord.media
+2025-05-09 04:08:01,380 | INFO | Disconnecting from voice normally, close code 1000.
+2025-05-09 04:08:01,383 | INFO | The voice handshake is being terminated for Channel ID 805641564872376385 (Guild ID 805641564872376380)
+2025-05-09 04:08:18,535 | INFO | Rendimiento: RAM: 73.66 MB | CPU: 0.0% | Uptime: 0.03 horas
+2025-05-09 04:10:44,915 | INFO | Rendimiento: RAM: 59.45 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 04:10:44,988 | INFO | logging in using static token
+2025-05-09 04:10:46,125 | INFO | Shard ID None has connected to Gateway (Session ID: 67dd3847226ae5e32ce29e62676b8634).
+2025-05-09 04:11:49,534 | INFO | Connecting to voice...
+2025-05-09 04:11:49,535 | INFO | Starting voice handshake... (connection attempt 1)
+2025-05-09 04:11:49,842 | INFO | Voice handshake complete. Endpoint found buenos-aires7387.discord.media
+2025-05-09 04:12:15,469 | WARNING | Shard ID None voice heartbeat blocked for more than 10 seconds
+Loop thread traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 310, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1395, in on_message
+    await self.process_commands(message)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1392, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 128, in reproducir
+    await self.play_next(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 234, in play_next
+    player = await YTDLSource.from_url(next_song['url'], loop=self.bot.loop, stream=True)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 45, in from_url
+    return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 290, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 166, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 180, in _spawn_process
+    process = subprocess.Popen(args, creationflags=CREATE_NO_WINDOW, **subprocess_kwargs)
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1509, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+
+2025-05-09 04:12:18,419 | WARNING | Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 310, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1395, in on_message
+    await self.process_commands(message)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1392, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 128, in reproducir
+    await self.play_next(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 234, in play_next
+    player = await YTDLSource.from_url(next_song['url'], loop=self.bot.loop, stream=True)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 45, in from_url
+    return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 290, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 166, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 180, in _spawn_process
+    process = subprocess.Popen(args, creationflags=CREATE_NO_WINDOW, **subprocess_kwargs)
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1509, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+
+2025-05-09 04:12:25,532 | WARNING | Shard ID None voice heartbeat blocked for more than 20 seconds
+Loop thread traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 310, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1395, in on_message
+    await self.process_commands(message)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1392, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 128, in reproducir
+    await self.play_next(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 234, in play_next
+    player = await YTDLSource.from_url(next_song['url'], loop=self.bot.loop, stream=True)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 45, in from_url
+    return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 290, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 166, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 180, in _spawn_process
+    process = subprocess.Popen(args, creationflags=CREATE_NO_WINDOW, **subprocess_kwargs)
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1509, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+
+2025-05-09 04:12:28,469 | WARNING | Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "c:\Users\ignac\Desktop\cosas PY\discord\bot.py", line 310, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1395, in on_message
+    await self.process_commands(message)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1392, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 128, in reproducir
+    await self.play_next(ctx)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 234, in play_next
+    player = await YTDLSource.from_url(next_song['url'], loop=self.bot.loop, stream=True)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 45, in from_url
+    return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 290, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 166, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\player.py", line 180, in _spawn_process
+    process = subprocess.Popen(args, creationflags=CREATE_NO_WINDOW, **subprocess_kwargs)
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 1509, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+
+2025-05-09 04:12:31,760 | ERROR | Disconnected from voice... Reconnecting in 1.88s.
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 490, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\aiohttp\client_ws.py", line 336, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "aiohttp\\_websocket\\reader_c.py", line 118, in read
+  File "aiohttp\\_websocket\\reader_c.py", line 115, in aiohttp._websocket.reader_c.WebSocketDataQueue.read
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\voice_client.py", line 461, in poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 1003, in poll_event
+    msg = await asyncio.wait_for(self.ws.receive(), timeout=30.0)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 492, in wait_for
+    raise exceptions.TimeoutError() from exc
+TimeoutError
+2025-05-09 04:12:33,711 | INFO | The voice handshake is being terminated for Channel ID 805641564872376385 (Guild ID 805641564872376380)
+2025-05-09 04:12:33,712 | INFO | Connecting to voice...
+2025-05-09 04:12:33,713 | INFO | Starting voice handshake... (connection attempt 2)
+2025-05-09 04:12:34,148 | INFO | Voice handshake complete. Endpoint found buenos-aires7387.discord.media
+2025-05-09 04:14:55,175 | INFO | Disconnecting from voice normally, close code 1000.
+2025-05-09 04:14:55,185 | INFO | The voice handshake is being terminated for Channel ID 805641564872376385 (Guild ID 805641564872376380)
+2025-05-09 04:14:55,192 | INFO | ffmpeg process 6148 has not terminated. Waiting to terminate...
+2025-05-09 04:14:56,291 | INFO | ffmpeg process 6148 should have terminated with a return code of 1.
+2025-05-09 04:15:48,314 | INFO | Rendimiento: RAM: 75.84 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 04:17:41,681 | INFO | Rendimiento: RAM: 75.82 MB | CPU: 0.0% | Uptime: 0.12 horas
+2025-05-09 04:18:30,308 | INFO | Rendimiento: RAM: 59.54 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 04:18:30,329 | INFO | logging in using static token
+2025-05-09 04:18:31,537 | INFO | Shard ID None has connected to Gateway (Session ID: d0e51b4abfd196d4cf800c6fcc0c5adc).
+2025-05-09 04:18:59,349 | INFO | Connecting to voice...
+2025-05-09 04:18:59,349 | INFO | Starting voice handshake... (connection attempt 1)
+2025-05-09 04:18:59,656 | INFO | Voice handshake complete. Endpoint found buenos-aires1399.discord.media
+2025-05-09 04:19:59,909 | WARNING | Shard ID None has stopped responding to the gateway. Closing and restarting.
+2025-05-09 04:20:29,392 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "next" is not found
+2025-05-09 04:22:33,292 | INFO | ffmpeg process 936 has not terminated. Waiting to terminate...
+2025-05-09 04:22:33,777 | INFO | ffmpeg process 936 should have terminated with a return code of 1.
+2025-05-09 04:23:32,223 | ERROR | Ignoring exception in command reproducir
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 853, in _parse_arguments
+    kwargs[name] = await self.transform(ctx, param, attachments)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: url is a required argument that is missing.
+2025-05-09 04:23:33,894 | INFO | Rendimiento: RAM: 70.92 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 04:24:23,360 | INFO | Rendimiento: RAM: 70.94 MB | CPU: 0.0% | Uptime: 0.10 horas
+2025-05-09 04:24:23,362 | INFO | The voice handshake is being terminated for Channel ID 805641564872376385 (Guild ID 805641564872376380)
+2025-05-09 04:24:23,371 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 471, in finish_recv
+    return ov.getresult()
+           ^^^^^^^^^^^^^^
+OSError: [WinError 995] La operación de E/S se anuló por una salida de subproceso o por una solicitud de aplicación
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\musica.py", line 106, in reproducir
+    await channel.connect()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\abc.py", line 1906, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\voice_client.py", line 395, in connect
+    self.ws = await self.connect_websocket()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\voice_client.py", line 366, in connect_websocket
+    await ws.poll_event()
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 1005, in poll_event
+    await self.received_message(utils._from_json(msg.data))
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 930, in received_message
+    await self.initial_connection(data)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\gateway.py", line 957, in initial_connection
+    recv = await self.loop.sock_recv(state.socket, 74)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\proactor_events.py", line 705, in sock_recv
+    return await self._proactor.recv(sock, n)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 846, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\windows_events.py", line 475, in finish_recv
+    raise ConnectionResetError(*exc.args)
+ConnectionResetError: [WinError 995] La operación de E/S se anuló por una salida de subproceso o por una solicitud de aplicación
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ConnectionResetError: [WinError 995] La operación de E/S se anuló por una salida de subproceso o por una solicitud de aplicación
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1395, in on_message
+    await self.process_commands(message)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1392, in process_commands
+    await self.invoke(ctx)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1354, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 650, in dispatch_error
+    ctx.bot.dispatch('command_error', ctx, error)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 221, in dispatch
+    super().dispatch(event_name, *args, **kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 499, in dispatch
+    self._schedule_event(coro, method, *args, **kwargs)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 459, in _schedule_event
+    return self.loop.create_task(wrapped, name=f'discord.py: {event_name}')
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_MissingSentinel' object has no attribute 'create_task'
+2025-05-09 05:08:09,656 | INFO | Rendimiento: RAM: 59.78 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:08:09,656 | INFO | logging in using static token
+2025-05-09 05:08:11,024 | INFO | Shard ID None has connected to Gateway (Session ID: d43f5f38c82b2f0a80f532b7cd6c3b0a).
+2025-05-09 05:09:09,690 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:09:36,849 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:09:41,882 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:12:10,411 | INFO | Rendimiento: RAM: 61.06 MB | CPU: 0.0% | Uptime: 0.07 horas
+2025-05-09 05:12:30,351 | INFO | Rendimiento: RAM: 59.93 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:12:30,362 | INFO | logging in using static token
+2025-05-09 05:12:31,479 | INFO | Shard ID None has connected to Gateway (Session ID: 390f37a33e62919dd1b1b43fad24faf1).
+2025-05-09 05:13:08,332 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:13:24,843 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:15:57,091 | INFO | Rendimiento: RAM: 62.39 MB | CPU: 0.0% | Uptime: 0.06 horas
+2025-05-09 05:17:19,849 | INFO | Rendimiento: RAM: 59.83 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:17:19,864 | INFO | logging in using static token
+2025-05-09 05:17:21,181 | INFO | Shard ID None has connected to Gateway (Session ID: 88c79d9dc172ff15c5b26b56a2401022).
+2025-05-09 05:17:25,179 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:17:53,226 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ahorcado" is not found
+2025-05-09 05:18:54,475 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "hangman" is not found
+2025-05-09 05:20:59,322 | INFO | Rendimiento: RAM: 62.32 MB | CPU: 0.0% | Uptime: 0.06 horas
+2025-05-09 05:22:25,119 | INFO | Rendimiento: RAM: 60.13 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:22:25,134 | CRITICAL | ERROR: IndexError: list index out of range
+2025-05-09 05:30:13,019 | INFO | Rendimiento: RAM: 59.93 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:30:13,059 | CRITICAL | ERROR: IndexError: list index out of range
+2025-05-09 05:31:42,848 | INFO | Rendimiento: RAM: 60.18 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:31:42,865 | CRITICAL | ERROR: IndexError: list index out of range
+2025-05-09 05:32:13,629 | INFO | Rendimiento: RAM: 60.02 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:32:13,638 | INFO | logging in using static token
+2025-05-09 05:32:14,738 | INFO | Shard ID None has connected to Gateway (Session ID: 3349742b8e985cd92c2ddf835c52cd41).
+2025-05-09 05:32:20,826 | ERROR | Ignoring exception in command ahorcado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 100, in ahorcado
+    saldo = await economia.get_balance(ctx.author.id)
+                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Economia' object has no attribute 'get_balance'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Economia' object has no attribute 'get_balance'
+2025-05-09 05:36:09,978 | INFO | Rendimiento: RAM: 62.86 MB | CPU: 0.0% | Uptime: 0.07 horas
+2025-05-09 05:36:15,116 | INFO | Rendimiento: RAM: 59.78 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:36:15,132 | INFO | logging in using static token
+2025-05-09 05:36:16,307 | INFO | Shard ID None has connected to Gateway (Session ID: 3332b4437ea5d947dc7b43f4758a69de).
+2025-05-09 05:41:18,445 | INFO | Rendimiento: RAM: 62.23 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 05:42:25,022 | INFO | Rendimiento: RAM: 62.24 MB | CPU: 0.0% | Uptime: 0.10 horas
+2025-05-09 05:42:36,374 | INFO | Rendimiento: RAM: 59.81 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:42:36,390 | INFO | logging in using static token
+2025-05-09 05:42:37,767 | INFO | Shard ID None has connected to Gateway (Session ID: 025fb001d28c95c8a0b46ff2e0034611).
+2025-05-09 05:47:40,015 | INFO | Rendimiento: RAM: 62.47 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 05:48:12,952 | INFO | Rendimiento: RAM: 62.48 MB | CPU: 0.0% | Uptime: 0.09 horas
+2025-05-09 05:48:24,008 | INFO | Rendimiento: RAM: 60.00 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:48:24,018 | INFO | logging in using static token
+2025-05-09 05:48:25,467 | INFO | Shard ID None has connected to Gateway (Session ID: a6b6d89f612cc7ce8e44577bea043386).
+2025-05-09 05:50:17,985 | INFO | Rendimiento: RAM: 62.67 MB | CPU: 0.0% | Uptime: 0.03 horas
+2025-05-09 05:58:28,119 | INFO | Rendimiento: RAM: 59.84 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 05:58:28,145 | INFO | logging in using static token
+2025-05-09 05:58:29,756 | INFO | Shard ID None has connected to Gateway (Session ID: f2cfe6ec36ad2cd0c76ad81bc13cc022).
+2025-05-09 05:59:20,104 | INFO | Rendimiento: RAM: 62.39 MB | CPU: 0.0% | Uptime: 0.01 horas
+2025-05-09 06:00:01,498 | INFO | Rendimiento: RAM: 59.99 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 06:00:01,509 | INFO | logging in using static token
+2025-05-09 06:00:02,670 | INFO | Shard ID None has connected to Gateway (Session ID: 1eb7315afcf47ca13c38afda27501a3b).
+2025-05-09 06:00:45,090 | INFO | Shard ID None has successfully RESUMED session 1eb7315afcf47ca13c38afda27501a3b.
+2025-05-09 06:01:57,935 | INFO | Rendimiento: RAM: 62.88 MB | CPU: 0.0% | Uptime: 0.03 horas
+2025-05-09 15:19:12,170 | INFO | Rendimiento: RAM: 59.85 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 15:19:12,170 | INFO | logging in using static token
+2025-05-09 15:19:13,825 | INFO | Shard ID None has connected to Gateway (Session ID: 44fbb96993169657cc05d05036abe647).
+2025-05-09 15:19:40,416 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:19:47,804 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:19:55,417 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:20:05,251 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:20:31,762 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:21:13,566 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:21:29,986 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:21:33,435 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:21:38,022 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 201, in on_message
+    await self.mostrar_estado(message.channel)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 133, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 15:24:15,979 | INFO | Rendimiento: RAM: 62.14 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 15:26:24,120 | INFO | Rendimiento: RAM: 62.14 MB | CPU: 0.0% | Uptime: 0.12 horas
+2025-05-09 15:26:31,245 | INFO | Rendimiento: RAM: 59.82 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 15:26:31,245 | INFO | logging in using static token
+2025-05-09 15:26:32,562 | INFO | Shard ID None has connected to Gateway (Session ID: 0e6c6427f21aed8fa003279775231d35).
+2025-05-09 15:31:03,293 | INFO | Rendimiento: RAM: 62.49 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 15:47:52,705 | INFO | Rendimiento: RAM: 59.79 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 15:47:52,756 | INFO | logging in using static token
+2025-05-09 15:47:55,646 | INFO | Shard ID None has connected to Gateway (Session ID: 11066b6c043312fc591085816db0bc57).
+2025-05-09 15:52:57,782 | INFO | Rendimiento: RAM: 62.70 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 15:57:57,907 | INFO | Rendimiento: RAM: 62.72 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 16:02:58,102 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 16:07:58,417 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-09 16:12:58,546 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.42 horas
+2025-05-09 16:17:58,737 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.50 horas
+2025-05-09 16:22:58,936 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.59 horas
+2025-05-09 16:27:59,108 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.67 horas
+2025-05-09 16:32:59,226 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 0.75 horas
+2025-05-09 16:37:59,393 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 0.84 horas
+2025-05-09 16:42:59,556 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 0.92 horas
+2025-05-09 16:47:59,734 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 1.00 horas
+2025-05-09 16:52:59,884 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 1.09 horas
+2025-05-09 16:58:00,045 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 1.17 horas
+2025-05-09 17:03:00,231 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 1.25 horas
+2025-05-09 17:08:00,363 | INFO | Rendimiento: RAM: 61.21 MB | CPU: 0.0% | Uptime: 1.34 horas
+2025-05-09 17:08:30,088 | INFO | Shard ID None has successfully RESUMED session 11066b6c043312fc591085816db0bc57.
+2025-05-09 17:12:25,617 | INFO | Rendimiento: RAM: 61.54 MB | CPU: 0.0% | Uptime: 1.41 horas
+2025-05-09 17:13:20,682 | INFO | Rendimiento: RAM: 59.95 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 17:13:20,712 | INFO | logging in using static token
+2025-05-09 17:13:22,046 | INFO | Shard ID None has connected to Gateway (Session ID: e31801c06196b91c402b95b30b358f7d).
+2025-05-09 17:13:56,488 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 1194, in jugar_dados
+    await self.crear_desafio(ctx, usuario_retado, valor_apuesta)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Dados' object has no attribute 'crear_desafio'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Dados' object has no attribute 'crear_desafio'
+2025-05-09 17:16:25,022 | INFO | Rendimiento: RAM: 62.80 MB | CPU: 0.0% | Uptime: 0.05 horas
+2025-05-09 17:31:06,535 | INFO | Rendimiento: RAM: 60.11 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 17:31:06,543 | INFO | logging in using static token
+2025-05-09 17:31:07,821 | INFO | Shard ID None has connected to Gateway (Session ID: fa800da6673a07a1d244241cc4ced5c7).
+2025-05-09 17:31:34,484 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 1194, in jugar_dados
+    await self.crear_desafio(ctx, usuario_retado, valor_apuesta)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Dados' object has no attribute 'crear_desafio'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Dados' object has no attribute 'crear_desafio'
+2025-05-09 17:32:02,747 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 1194, in jugar_dados
+    await self.crear_desafio(ctx, usuario_retado, valor_apuesta)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Dados' object has no attribute 'crear_desafio'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Dados' object has no attribute 'crear_desafio'
+2025-05-09 17:36:10,029 | INFO | Rendimiento: RAM: 63.01 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 17:41:10,146 | INFO | Rendimiento: RAM: 63.02 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 17:46:10,309 | INFO | Rendimiento: RAM: 63.03 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 17:49:59,896 | INFO | Rendimiento: RAM: 61.82 MB | CPU: 0.0% | Uptime: 0.31 horas
+2025-05-09 17:50:08,711 | INFO | Rendimiento: RAM: 59.96 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 17:50:08,728 | INFO | logging in using static token
+2025-05-09 17:50:10,322 | INFO | Shard ID None has connected to Gateway (Session ID: a006db7ca2d263f69ba97645a748b023).
+2025-05-09 17:50:30,826 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 1196, in jugar_dados
+    await self.crear_desafio(ctx, usuario_retado, valor_apuesta)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Dados' object has no attribute 'crear_desafio'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Dados' object has no attribute 'crear_desafio'
+2025-05-09 17:54:10,896 | INFO | Rendimiento: RAM: 62.82 MB | CPU: 0.0% | Uptime: 0.07 horas
+2025-05-09 17:54:22,577 | INFO | Rendimiento: RAM: 59.98 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 17:54:22,591 | INFO | logging in using static token
+2025-05-09 17:54:23,826 | INFO | Shard ID None has connected to Gateway (Session ID: 3214287035f82efc19d52cb65c205eb6).
+2025-05-09 17:54:39,898 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 1194, in jugar_dados
+    await self.crear_desafio(ctx, usuario_retado, valor_apuesta)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Dados' object has no attribute 'crear_desafio'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Dados' object has no attribute 'crear_desafio'
+2025-05-09 17:59:26,031 | INFO | Rendimiento: RAM: 62.86 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 18:04:26,153 | INFO | Rendimiento: RAM: 62.87 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 18:09:26,310 | INFO | Rendimiento: RAM: 62.85 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 18:14:26,443 | INFO | Rendimiento: RAM: 62.85 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-09 18:19:26,549 | INFO | Rendimiento: RAM: 62.85 MB | CPU: 0.0% | Uptime: 0.42 horas
+2025-05-09 18:24:26,757 | INFO | Rendimiento: RAM: 62.85 MB | CPU: 0.0% | Uptime: 0.50 horas
+2025-05-09 18:24:29,106 | INFO | Rendimiento: RAM: 62.87 MB | CPU: 0.0% | Uptime: 0.50 horas
+2025-05-09 18:24:54,604 | INFO | Rendimiento: RAM: 60.15 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 18:24:54,634 | INFO | logging in using static token
+2025-05-09 18:24:56,233 | INFO | Shard ID None has connected to Gateway (Session ID: 2f2b5d6e1c1b43b3ad85c60aead9f585).
+2025-05-09 18:29:58,373 | INFO | Rendimiento: RAM: 63.11 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 18:31:09,992 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 328, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 357, in procesar_letra
+    await self.mostrar_estado(canal)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 268, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 18:31:16,067 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 328, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 368, in procesar_letra
+    await self.mostrar_estado(canal)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 268, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 18:31:19,403 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 328, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 357, in procesar_letra
+    await self.mostrar_estado(canal)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 268, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 18:34:58,514 | INFO | Rendimiento: RAM: 62.57 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 18:38:44,941 | INFO | Rendimiento: RAM: 61.10 MB | CPU: 0.0% | Uptime: 0.23 horas
+2025-05-09 20:23:43,005 | INFO | Rendimiento: RAM: 59.92 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 20:23:43,043 | INFO | logging in using static token
+2025-05-09 20:23:45,027 | INFO | Shard ID None has connected to Gateway (Session ID: c9543dd3fbd115b0343c29de6bef08a5).
+2025-05-09 20:27:43,849 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 328, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 368, in procesar_letra
+    await self.mostrar_estado(canal)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 268, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 20:27:46,599 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 328, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 368, in procesar_letra
+    await self.mostrar_estado(canal)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 268, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 20:28:46,414 | INFO | Rendimiento: RAM: 62.12 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 20:32:21,793 | INFO | Rendimiento: RAM: 59.85 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 20:32:21,799 | INFO | logging in using static token
+2025-05-09 20:32:23,321 | INFO | Shard ID None has connected to Gateway (Session ID: 3c1debf9bc70aefb3b701fab5167ecdf).
+2025-05-09 20:37:25,518 | INFO | Rendimiento: RAM: 62.36 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 20:38:35,788 | INFO | Rendimiento: RAM: 62.37 MB | CPU: 0.0% | Uptime: 0.10 horas
+2025-05-09 20:42:40,401 | INFO | Rendimiento: RAM: 60.07 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 20:42:40,437 | INFO | logging in using static token
+2025-05-09 20:42:41,666 | INFO | Shard ID None has connected to Gateway (Session ID: f586cbbf7e6d75ad8eabddb5a870190c).
+2025-05-09 20:42:48,361 | ERROR | Ignoring exception in command jackpot
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 279, in ver_jackpot
+    await casino_manager.verificar_jackpot(ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+2025-05-09 20:43:10,880 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 344, in jugar_dados
+    await self.crear_desafio(ctx, usuario_retado, valor_apuesta)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 495, in crear_desafio
+    await self.jugar_entre_usuarios(ctx, ctx.author, usuario_retado, valor_apuesta)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 570, in jugar_entre_usuarios
+    await casino_manager.verificar_jackpot(ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+2025-05-09 20:47:43,855 | INFO | Rendimiento: RAM: 63.34 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 20:49:17,950 | INFO | Rendimiento: RAM: 63.35 MB | CPU: 0.0% | Uptime: 0.11 horas
+2025-05-09 20:49:31,108 | INFO | Rendimiento: RAM: 60.09 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 20:49:31,131 | INFO | logging in using static token
+2025-05-09 20:49:32,389 | INFO | Shard ID None has connected to Gateway (Session ID: b4b6de91eb7748e66074abe33b9c1bb4).
+2025-05-09 20:49:52,653 | ERROR | Ignoring exception in command jackpot
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 279, in ver_jackpot
+    await casino_manager.verificar_jackpot(ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+2025-05-09 20:54:34,516 | INFO | Rendimiento: RAM: 63.09 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 20:54:59,907 | INFO | Rendimiento: RAM: 63.11 MB | CPU: 0.0% | Uptime: 0.09 horas
+2025-05-09 20:55:06,939 | INFO | Rendimiento: RAM: 59.87 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 20:55:06,977 | INFO | logging in using static token
+2025-05-09 20:55:08,835 | INFO | Shard ID None has connected to Gateway (Session ID: 1bfa94aeba4cd8318449270bec724744).
+2025-05-09 20:55:40,397 | ERROR | Ignoring exception in command jackpot
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 262, in ver_jackpot
+    casino_manager = self.casino_manager
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Ruleta' object has no attribute 'casino_manager'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Ruleta' object has no attribute 'casino_manager'
+2025-05-09 20:56:07,900 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "_verjackpot" is not found
+2025-05-09 20:56:17,085 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "ver_jackpot" is not found
+2025-05-09 21:00:11,032 | INFO | Rendimiento: RAM: 62.70 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 21:04:34,378 | INFO | Rendimiento: RAM: 62.69 MB | CPU: 0.0% | Uptime: 0.16 horas
+2025-05-09 21:04:43,832 | INFO | Rendimiento: RAM: 59.85 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:04:43,968 | INFO | logging in using static token
+2025-05-09 21:04:45,366 | INFO | Shard ID None has connected to Gateway (Session ID: 5f5c5ce5f7840562f4e11f727a15d154).
+2025-05-09 21:04:56,082 | ERROR | Ignoring exception in command jackpot
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 288, in ver_jackpot
+    await casino_manager.verificar_jackpot(ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+2025-05-09 21:05:49,292 | ERROR | Ignoring exception in command jackpot
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 288, in ver_jackpot
+    await casino_manager.verificar_jackpot(ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'CasinoManager' object has no attribute 'verificar_jackpot'
+2025-05-09 21:09:47,513 | INFO | Rendimiento: RAM: 62.83 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 21:14:36,489 | INFO | Rendimiento: RAM: 62.82 MB | CPU: 0.0% | Uptime: 0.16 horas
+2025-05-09 21:15:07,710 | INFO | Rendimiento: RAM: 60.07 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:15:07,713 | CRITICAL | ERROR: ValueError: too many values to unpack (expected 2)
+2025-05-09 21:16:32,343 | INFO | Rendimiento: RAM: 59.61 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:16:32,352 | INFO | logging in using static token
+2025-05-09 21:16:33,937 | INFO | Shard ID None has connected to Gateway (Session ID: ca9fd0e3ce78192e28004cd1cfb2fd3b).
+2025-05-09 21:21:36,095 | INFO | Rendimiento: RAM: 63.22 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 21:22:10,897 | INFO | Rendimiento: RAM: 63.24 MB | CPU: 0.0% | Uptime: 0.09 horas
+2025-05-09 21:22:20,617 | INFO | Rendimiento: RAM: 60.03 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:22:20,645 | INFO | logging in using static token
+2025-05-09 21:22:21,741 | INFO | Shard ID None has connected to Gateway (Session ID: a199f5dc4c9c304de9afb6c3f94df5be).
+2025-05-09 21:22:35,937 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "jackpot" is not found
+2025-05-09 21:23:03,457 | ERROR | Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "jackpot" is not found
+2025-05-09 21:23:13,310 | INFO | Rendimiento: RAM: 62.50 MB | CPU: 0.0% | Uptime: 0.01 horas
+2025-05-09 21:24:10,346 | INFO | Rendimiento: RAM: 60.01 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:24:10,356 | INFO | logging in using static token
+2025-05-09 21:24:11,652 | INFO | Shard ID None has connected to Gateway (Session ID: a9b37b1d22fc9a2f0ea5311ccd67802e).
+2025-05-09 21:29:13,842 | INFO | Rendimiento: RAM: 62.39 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 21:33:57,405 | INFO | Rendimiento: RAM: 62.38 MB | CPU: 0.0% | Uptime: 0.16 horas
+2025-05-09 21:34:04,899 | INFO | Rendimiento: RAM: 59.97 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:34:04,932 | INFO | logging in using static token
+2025-05-09 21:34:06,726 | INFO | Shard ID None has connected to Gateway (Session ID: 06634d78ac380de0f67359095251525a).
+2025-05-09 21:34:26,665 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 376, in jugar_dados
+    await self.jugar_contra_bot(ctx, valor_apuesta)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 415, in jugar_contra_bot
+    nuevo_jackpot, debe_repartir = casino_manager.agregar_al_jackpot(valor_apuesta)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 116, in agregar_al_jackpot
+    if nuevo_jackpot >= self.JACKPOT_LIMITE:
+                        ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CasinoManager' object has no attribute 'JACKPOT_LIMITE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'CasinoManager' object has no attribute 'JACKPOT_LIMITE'
+2025-05-09 21:39:09,012 | INFO | Rendimiento: RAM: 62.84 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 21:41:22,468 | INFO | Rendimiento: RAM: 62.84 MB | CPU: 0.0% | Uptime: 0.12 horas
+2025-05-09 21:41:29,611 | INFO | Rendimiento: RAM: 59.98 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:41:29,616 | INFO | logging in using static token
+2025-05-09 21:41:31,020 | INFO | Shard ID None has connected to Gateway (Session ID: 5233c1128f48393e3c61c972fbce0480).
+2025-05-09 21:42:00,609 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\casino.py", line 204, in jugar_dados
+    if saldo < valor_apuesta:
+       ^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'tuple' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: '<' not supported between instances of 'tuple' and 'int'
+2025-05-09 21:44:10,630 | INFO | Rendimiento: RAM: 62.65 MB | CPU: 0.0% | Uptime: 0.04 horas
+2025-05-09 21:44:45,469 | INFO | Rendimiento: RAM: 59.48 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 21:44:45,481 | INFO | logging in using static token
+2025-05-09 21:44:46,631 | INFO | Shard ID None has connected to Gateway (Session ID: 3d185be23872f81905edc42120329801).
+2025-05-09 21:46:45,607 | ERROR | Ignoring exception in command dado
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 715, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\converter.py", line 1355, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\converter.py", line 1237, in _actual_conversion
+    return await converter().convert(ctx, argument)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\converter.py", line 276, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "@ignacioalem2" not found.
+2025-05-09 21:48:10,678 | INFO | Rendimiento: RAM: 63.25 MB | CPU: 0.0% | Uptime: 0.06 horas
+2025-05-09 22:04:59,412 | INFO | Rendimiento: RAM: 59.91 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 22:04:59,427 | INFO | logging in using static token
+2025-05-09 22:05:00,674 | INFO | Shard ID None has connected to Gateway (Session ID: c19097c1546b3ab62eb82e80f318bd54).
+2025-05-09 22:10:02,838 | INFO | Rendimiento: RAM: 62.37 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 22:15:03,037 | INFO | Rendimiento: RAM: 62.37 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 22:20:03,273 | INFO | Rendimiento: RAM: 62.35 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 22:21:38,771 | INFO | Rendimiento: RAM: 62.36 MB | CPU: 0.0% | Uptime: 0.28 horas
+2025-05-09 22:22:23,339 | INFO | Rendimiento: RAM: 59.95 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 22:22:23,393 | INFO | logging in using static token
+2025-05-09 22:22:24,660 | INFO | Shard ID None has connected to Gateway (Session ID: 6d6cfbbba380621f4b4b497d364f130f).
+2025-05-09 22:27:26,833 | INFO | Rendimiento: RAM: 62.43 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 22:32:26,972 | INFO | Rendimiento: RAM: 62.45 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 22:33:45,768 | INFO | Rendimiento: RAM: 62.43 MB | CPU: 0.0% | Uptime: 0.19 horas
+2025-05-09 22:34:05,990 | INFO | Rendimiento: RAM: 60.08 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 22:34:06,016 | INFO | logging in using static token
+2025-05-09 22:34:07,517 | INFO | Shard ID None has connected to Gateway (Session ID: 3fdbed4e5b25351a5505e3d53d91f812).
+2025-05-09 22:36:50,104 | ERROR | Ignoring exception in command stats
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\estadisticas.py", line 301, in estadisticas
+    value=f"Partidas: {total_ahorcado}\nVictorias: {ahorcado_stats['victorias']}\nBalance: {balance_ahorcado}",
+                      ^^^^^^^^^^^^^^
+NameError: name 'total_ahorcado' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'total_ahorcado' is not defined
+2025-05-09 22:39:09,673 | INFO | Rendimiento: RAM: 63.16 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 22:44:09,828 | INFO | Rendimiento: RAM: 61.98 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 22:49:09,949 | INFO | Rendimiento: RAM: 61.95 MB | CPU: 0.0% | Uptime: 0.25 horas
+2025-05-09 22:54:10,097 | INFO | Rendimiento: RAM: 61.95 MB | CPU: 0.0% | Uptime: 0.33 horas
+2025-05-09 22:59:10,270 | INFO | Rendimiento: RAM: 61.95 MB | CPU: 0.0% | Uptime: 0.42 horas
+2025-05-09 23:00:26,850 | INFO | Rendimiento: RAM: 61.96 MB | CPU: 0.0% | Uptime: 0.44 horas
+2025-05-09 23:00:32,661 | INFO | Rendimiento: RAM: 60.05 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 23:00:32,698 | INFO | logging in using static token
+2025-05-09 23:00:33,964 | INFO | Shard ID None has connected to Gateway (Session ID: a0808918e044c91877a705f3899e5230).
+2025-05-09 23:00:41,149 | ERROR | Ignoring exception in command stats
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\estadisticas.py", line 301, in estadisticas
+    value=f"Partidas: {total_ahorcado}\nVictorias: {ahorcado_stats['victorias']}\nBalance: {balance_ahorcado}",
+                      ^^^^^^^^^^^^^^
+NameError: name 'total_ahorcado' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'total_ahorcado' is not defined
+2025-05-09 23:05:36,160 | INFO | Rendimiento: RAM: 62.82 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 23:10:36,312 | INFO | Rendimiento: RAM: 62.82 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 23:11:10,013 | INFO | Rendimiento: RAM: 62.84 MB | CPU: 0.0% | Uptime: 0.18 horas
+2025-05-09 23:11:17,327 | INFO | Rendimiento: RAM: 59.92 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 23:11:17,340 | INFO | logging in using static token
+2025-05-09 23:11:18,742 | INFO | Shard ID None has connected to Gateway (Session ID: 4915d1e16ab7790ae462e10eb6060d3c).
+2025-05-09 23:16:20,947 | INFO | Rendimiento: RAM: 62.50 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 23:17:34,648 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 328, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 357, in procesar_letra
+    await self.mostrar_estado(canal)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 268, in mostrar_estado
+    game = self.games[ctx.channel.id]
+                      ^^^^^^^^^^^
+AttributeError: 'TextChannel' object has no attribute 'channel'
+2025-05-09 23:21:17,560 | INFO | Rendimiento: RAM: 61.74 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 23:21:22,560 | INFO | Rendimiento: RAM: 59.92 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 23:21:22,698 | INFO | logging in using static token
+2025-05-09 23:21:23,967 | INFO | Shard ID None has connected to Gateway (Session ID: 478467ce36682d9287046b1a566e8186).
+2025-05-09 23:22:32,780 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 331, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 368, in procesar_letra
+    await self.finalizar_juego(canal, False)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 412, in finalizar_juego
+    self.stats_manager.registrar_derrota_ahorcado(jugador_id, apuesta)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Ahorcado' object has no attribute 'stats_manager'
+2025-05-09 23:25:38,210 | INFO | Rendimiento: RAM: 62.73 MB | CPU: 0.0% | Uptime: 0.07 horas
+2025-05-09 23:26:14,544 | INFO | Rendimiento: RAM: 59.69 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 23:26:14,638 | INFO | logging in using static token
+2025-05-09 23:26:15,887 | INFO | Shard ID None has connected to Gateway (Session ID: cecbd25b59c65ba34e2bb8daa532cdce).
+2025-05-09 23:26:35,265 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\ignac\Desktop\cosas PY\discord\botpy\Lib\site-packages\discord\client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 331, in on_message
+    await self.procesar_letra(message.channel, contenido)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 357, in procesar_letra
+    await self.finalizar_juego(canal, True)
+  File "c:\Users\ignac\Desktop\cosas PY\discord\comandos\ahorcado.py", line 400, in finalizar_juego
+    stats_manager.registrar_victoria_ahorcado(jugador_id, ganancia_neta)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Estadisticas' object has no attribute 'registrar_victoria_ahorcado'
+2025-05-09 23:31:18,044 | INFO | Rendimiento: RAM: 61.40 MB | CPU: 0.0% | Uptime: 0.08 horas
+2025-05-09 23:36:18,213 | INFO | Rendimiento: RAM: 61.41 MB | CPU: 0.0% | Uptime: 0.17 horas
+2025-05-09 23:38:46,933 | INFO | Rendimiento: RAM: 61.40 MB | CPU: 0.0% | Uptime: 0.21 horas
+2025-05-09 23:38:56,642 | INFO | Rendimiento: RAM: 60.02 MB | CPU: 0.0% | Uptime: 0.00 horas
+2025-05-09 23:38:56,666 | INFO | logging in using static token
+2025-05-09 23:38:57,979 | INFO | Shard ID None has connected to Gateway (Session ID: 02fa209cae244c57c03943da2535f6fc).

@@ -1,24 +1,37 @@
 {
     "665668290605219885": {
         "ppt": {
-            "victorias": 13,
+            "victorias": 14,
             "derrotas": 5
         },
         "ruleta": {
-            "ganancias": 120,
-            "perdidas": 20,
-            "apuestas_totales": 10
+            "ganancias": 311,
+            "perdidas": 234,
+            "apuestas_totales": 6
         },
         "reto": {
-            "victorias": 0,
+            "victorias": 1,
             "derrotas": 0
         },
         "wordle": {
-            "partidas_jugadas": 0,
-            "partidas_ganadas": 0,
+            "partidas_jugadas": 1,
+            "partidas_ganadas": 1,
             "partidas_perdidas": 0,
-            "intentos_totales": 0,
-            "historial_intentos": []
+            "intentos_totales": 5,
+            "historial_intentos": [
+                5
+            ]
+        },
+        "dados": {
+            "victorias": 15,
+            "derrotas": 20
+        },
+        "ahorcado": {
+            "partidas_jugadas": 0,
+            "victorias": 0,
+            "derrotas": 0,
+            "ganancias": 0,
+            "perdidas": 0
         }
     },
     "853036678628638760": {
@@ -34,6 +47,39 @@
             "ganancias": 0,
             "perdidas": 0,
             "apuestas_totales": 0
+        },
+        "wordle": {
+            "partidas_jugadas": 0,
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0
+        },
+        "dados": {
+            "victorias": 5,
+            "derrotas": 8
+        }
+    },
+    "697987561058205768": {
+        "ppt": {
+            "victorias": 0,
+            "derrotas": 0
+        },
+        "reto": {
+            "victorias": 0,
+            "derrotas": 1
+        },
+        "ruleta": {
+            "ganancias": 10619,
+            "perdidas": 5010,
+            "apuestas_totales": 78
+        },
+        "wordle": {
+            "partidas_jugadas": 5,
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 5
+        },
+        "dados": {
+            "victorias": 1,
+            "derrotas": 2
         }
     }
 }
